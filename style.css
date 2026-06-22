@@ -14,8 +14,8 @@
   --r-pill:      100px;
   --pad:         2.5vw;
   --mw:          1400px;
-  --nav-glass:   rgba(255,255,255,0.33);
-  --nav-border:  rgba(255,255,255,0.38);
+  --nav-glass:   rgba(255,255,255,0.78);
+  --nav-border:  rgba(0,0,0,0.08);
 }
 
 /* ── RESET ──────────────────────────────────────────────── */
@@ -60,8 +60,8 @@ button { font-family: inherit; }
 }
 .nav-logo {
   font-size: 17px;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 400;
+  color: rgba(0,0,0,0.8);
   letter-spacing: -0.5px;
   margin-right: auto;
 }
@@ -71,7 +71,7 @@ button { font-family: inherit; }
   gap: 2px;
 }
 .nav-link {
-  color: rgba(255,255,255,0.82);
+  color: rgba(0,0,0,0.6);
   font-size: 14px;
   font-weight: 500;
   padding: 8px 13px;
@@ -79,12 +79,12 @@ button { font-family: inherit; }
   transition: color .2s, background .2s;
   white-space: nowrap;
 }
-.nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.nav-link:hover { color: rgba(0,0,0,0.85); background: rgba(0,0,0,0.05); }
 
 /* Dropdown */
 .nav-drop { position: relative; }
 .nav-drop-btn {
-  color: rgba(255,255,255,0.82);
+  color: rgba(0,0,0,0.6);
   font-size: 14px;
   font-weight: 500;
   padding: 8px 13px;
@@ -99,7 +99,7 @@ button { font-family: inherit; }
   white-space: nowrap;
 }
 .nav-drop-btn:hover,
-.nav-drop:hover .nav-drop-btn { color: #fff; background: rgba(255,255,255,0.1); }
+.nav-drop:hover .nav-drop-btn { color: rgba(0,0,0,0.85); background: rgba(0,0,0,0.05); }
 .nav-drop-btn .chevron {
   width: 12px; height: 12px;
   transition: transform .25s;
@@ -144,7 +144,7 @@ button { font-family: inherit; }
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid var(--nav-border);
-  color: #fff;
+  color: rgba(0,0,0,0.75);
   font-size: 14px;
   font-weight: 600;
   padding: 10px 22px;
@@ -154,7 +154,7 @@ button { font-family: inherit; }
   flex-shrink: 0;
   display: block;
 }
-.btn-quote:hover { background: rgba(255,255,255,0.28); }
+.btn-quote:hover { background: rgba(255,255,255,0.95); }
 
 /* Hamburger */
 .hamburger {
@@ -171,7 +171,7 @@ button { font-family: inherit; }
   display: block;
   width: 22px;
   height: 2.5px;
-  background: #fff;
+  background: rgba(0,0,0,0.65);
   border-radius: var(--r-pill);
   transition: transform .3s, opacity .3s;
 }
