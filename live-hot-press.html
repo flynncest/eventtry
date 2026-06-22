@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Hot Press Canvas | Custom Print Activation for Events</title>
+  <meta name="description" content="Live heat-transfer printing on canvas tote bags, pouches and accessories at your event. Guests watch their design printed in real time. From €8 per piece.">
+  <meta name="keywords" content="live hot press canvas event, heat transfer printing event, custom canvas tote bag event, live printing activation, canvas bag personalization event, screen printing event">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .act-hero { min-height: 65vh; background: #F4F4F4; display: flex; align-items: center; padding: 140px var(--pad) 72px; border-radius: 0 0 40px 40px; }
+    .act-hero-inner { max-width: var(--mw); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .act-hero-text .sec-badge-lime { color: rgba(30,30,30,0.55); margin-bottom: 14px; }
+    .act-hero-text h1 { font-size: clamp(38px,5.5vw,80px); font-weight: 600; letter-spacing: -2.5px; color: var(--char); line-height: 1.0; margin-bottom: 16px; }
+    .act-hero-text p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 480px; line-height: 1.65; margin-bottom: 28px; }
+    .act-hero-img { display: flex; justify-content: center; align-items: center; height: 380px; }
+    .act-hero-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
+    .stat-bar { display: flex; background: rgba(255,255,255,0.72); border-radius: 16px; margin-top: 12px; overflow: hidden; max-width: 460px; }
+    .stat-bar-item { flex: 1; padding: 16px 20px; border-right: 1px solid rgba(0,0,0,0.07); }
+    .stat-bar-item:last-child { border-right: none; }
+    .stat-bar-num { font-size: 22px; font-weight: 600; color: var(--char); }
+    .stat-bar-lbl { font-size: 11px; color: rgba(30,30,30,0.55); font-weight: 500; }
+
+    .sec-how { padding: 88px var(--pad); background: #fff; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 52px; }
+    .step { text-align: center; }
+    .step-num { width: 52px; height: 52px; background: var(--lime-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: var(--char); margin: 0 auto 18px; }
+    .step h4 { font-size: 17px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .sec-options { padding: 88px var(--pad); background: var(--soft); }
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+    .option-card { background: #fff; border-radius: 20px; padding: 30px 26px; display: flex; gap: 20px; }
+    .option-icon { width: 52px; height: 52px; background: var(--lime-soft); border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .option-icon svg { width: 24px; height: 24px; }
+    .option-card h4 { font-size: 16px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
+    .option-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .sec-items { padding: 88px var(--pad); background: #fff; }
+    .items-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+    .item-card { background: var(--soft); border-radius: 16px; overflow: hidden; transition: transform .3s; }
+    .item-card:hover { transform: translateY(-3px); }
+    .item-img { height: 200px; display: flex; align-items: center; justify-content: center; padding: 14px; }
+    .item-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
+    .item-info { padding: 14px 16px 18px; }
+    .item-name { font-size: 14px; font-weight: 600; color: var(--char); margin-bottom: 4px; }
+    .item-price { font-size: 12.5px; color: var(--muted); }
+
+    .sec-pricing { padding: 88px var(--pad); background: var(--soft); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .price-card { border: 1.5px solid rgba(30,30,30,0.1); border-radius: 20px; padding: 32px 28px; background: #fff; }
+    .price-card.featured { background: var(--lime); border-color: var(--lime); }
+    .price-tag { font-size: 36px; font-weight: 600; color: var(--char); letter-spacing: -1px; margin-bottom: 4px; }
+    .price-unit { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .price-card.featured .price-unit { color: rgba(30,30,30,0.55); }
+    .price-name { font-size: 18px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
+    .price-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .price-card.featured .price-desc { color: rgba(30,30,30,0.6); }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .price-list li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .price-card.featured .price-list li { color: rgba(30,30,30,0.65); }
+    .price-list li::before { content:''; display:block; width:16px; height:16px; background:var(--lime-soft); border-radius:50%; flex-shrink:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8l3 3 5-5' stroke='%234a6800' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:center; }
+    .price-card.featured .price-list li::before { background-color:rgba(255,255,255,0.5); }
+
+    .sec-cta { padding: 88px var(--pad); background: var(--lime-soft); text-align: center; }
+    .sec-cta h2 { font-size: clamp(28px,3.5vw,52px); font-weight: 600; letter-spacing: -1.5px; color: var(--char); margin-bottom: 14px; }
+    .sec-cta p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 500px; margin: 0 auto 32px; line-height: 1.65; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .options-grid { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .items-grid { grid-template-columns: repeat(2,1fr); } .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-options,.sec-items,.sec-pricing,.sec-cta { padding: 60px 5vw; } }
+  </style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">Event</a>
+  <div class="nav-links">
+    <div class="nav-drop"><button class="nav-drop-btn">Activations<svg class="chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1.5l5 5 5-5"/></svg></button>
+    <div class="nav-dropdown"><div class="nav-dropdown-menu"><a href="live-monogramming.html">Live Monogramming</a><a href="perfume-bar.html">Perfume Bar</a><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html" style="color:var(--lime)">Live Hot Press Canvas</a></div></div></div>
+    <a href="catalog.html" class="nav-link">Catalog</a><a href="pricing.html" class="nav-link">Private &amp; Corporate</a><a href="index.html#faq" class="nav-link">FAQ</a>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span></button>
+</div>
+  <a href="book.html" class="btn-quote">Get a Quote</a>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay">
+  <div class="mob-top">
+    <a href="index.html" class="mob-logo">Event</a>
+    <div class="mob-topnav"><a href="catalog.html">Catalog</a><a href="pricing.html">Pricing</a><a href="index.html#faq">FAQ</a></div>
+    <button class="mob-close" id="mobClose"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+  </div>
+  <div class="mob-panel">
+    <a href="live-monogramming.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-mono.png" alt="Live Monogramming"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Monogramming</span></div></a>
+    <a href="perfume-bar.html" class="mob-item"><div class="mob-item-img"><img src="images/perf-01.png" alt="Perfume Bar"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Perfume Bar</span></div></a>
+    <a href="clicker-bar.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-clicker.png" alt="Clicker Bar"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Clicker Bar</span></div></a>
+    <a href="live-hot-press.html" class="mob-item"><div class="mob-item-img"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Hot Press Canvas</span></div></a>
+    <a href="catalog.html" class="mob-all">Browse All Catalog <span>→</span></a>
+  </div>
+  <a href="book.html" class="mob-quote">Get a Quote</a>
+</div>
+
+<section class="act-hero">
+  <div class="act-hero-inner">
+    <div class="act-hero-text">
+      <div class="sec-badge-lime">Live Activation</div>
+      <h1>Live Hot<br>Press Canvas</h1>
+      <p>Heat-transfer printing on canvas totes, pouches and accessories, live on-site, while guests watch their personalized design appear in seconds. Bold, visual, and impossible to miss from across the room.</p>
+      <a href="book.html" class="btn-dark">Book This Activation</a>
+      <div class="stat-bar">
+        <div class="stat-bar-item"><div class="stat-bar-num">€8+</div><div class="stat-bar-lbl">Per piece</div></div>
+        <div class="stat-bar-item"><div class="stat-bar-num">45 sec</div><div class="stat-bar-lbl">Press time</div></div>
+        <div class="stat-bar-item"><div class="stat-bar-num">6+</div><div class="stat-bar-lbl">Item options</div></div>
+      </div>
+    </div>
+    <div class="act-hero-img"><img src="images/hot-05-laptop-sleeve.png" alt="Live hot press canvas activation"></div>
+  </div>
+</section>
+
+<section class="sec-how">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><div class="sec-badge">The Experience</div><h2 class="sec-h2">45 Seconds to<br>a Custom Keepsake</h2><p class="sec-sub">One of the most visually compelling activations. Guests love watching the press come down.</p></div>
+    <div class="steps-grid">
+      <div class="step reveal"><div class="step-num">1</div><h4>Choose Your Item</h4><p>Guests select from canvas totes, pouches, cosmetic bags, laptop sleeves and more in multiple sizes.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h4>Pick Your Design</h4><p>Choose from preset designs, your event's branding, or a custom name, applied via heat transfer vinyl.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h4>Watch the Press</h4><p>The heat press comes down at high temperature. In 45 seconds, a crisp, durable print is fused to the canvas. Permanent and washable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-options">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><div class="sec-badge">What We Offer</div><h2 class="sec-h2">Three Ways to Personalize</h2></div>
+    <div class="options-grid">
+      <div class="option-card reveal">
+        <div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6800" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div><h4>Name &amp; Initials</h4><p>Classic and clean. Guests' first name, initials or a short phrase in a bold font of their choice.</p></div>
+      </div>
+      <div class="option-card reveal">
+        <div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6800" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <div><h4>Brand Design</h4><p>Your company logo, event artwork or a custom design transferred in full color, great for corporate gifting.</p></div>
+      </div>
+      <div class="option-card reveal">
+        <div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6800" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg></div>
+        <div><h4>Event Theme Print</h4><p>We create a series of preset designs themed around your event. Guests pick their favorite to take home.</p></div>
+      </div>
+      <div class="option-card reveal">
+        <div class="option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6800" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><h4>Quotes &amp; Words</h4><p>A meaningful quote, a motivational word, or a fun phrase, printed large and bold on canvas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-items">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><div class="sec-badge">Canvas Items</div><h2 class="sec-h2">What Guests Can Print On</h2><p class="sec-sub">All canvas items are pre-washed and ready for printing. Multiple colorways available.</p></div>
+    <div class="items-grid">
+      <div class="item-card reveal"><div class="item-img"><img src="images/hot-03-tote-bag.png" alt="Tote Bag"></div><div class="item-info"><div class="item-name">Tote Bag 40x35cm</div><div class="item-price">From €10</div></div></div>
+      <div class="item-card reveal"><div class="item-img"><img src="images/mono-15-tote-40x30.png" alt="Tote Bag Small"></div><div class="item-info"><div class="item-name">Tote Bag 40x30cm</div><div class="item-price">From €10</div></div></div>
+      <div class="item-card reveal"><div class="item-img"><img src="images/mono-13-crossbody-bag.png" alt="Crossbody Bag"></div><div class="item-info"><div class="item-name">Canvas Crossbody Bag</div><div class="item-price">From €18</div></div></div>
+      <div class="item-card reveal"><div class="item-img"><img src="images/hot-05-laptop-sleeve.png" alt="Laptop Sleeve"></div><div class="item-info"><div class="item-name">Canvas Laptop Sleeve</div><div class="item-price">From €22</div></div></div>
+      <div class="item-card reveal"><div class="item-img"><img src="images/hot-04-cosmetic-bag.png" alt="Cosmetic Bag"></div><div class="item-info"><div class="item-name">Canvas Cosmetic Bag</div><div class="item-price">From €14</div></div></div>
+      <div class="item-card reveal"><div class="item-img"><img src="images/mono-14-drawstring-bag.png" alt="Drawstring Bag"></div><div class="item-info"><div class="item-name">Canvas Drawstring Bag</div><div class="item-price">From €8</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pricing">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><div class="sec-badge">Pricing</div><h2 class="sec-h2">Priced Per Printed Piece</h2><p class="sec-sub">Canvas items, heat press equipment, vinyl transfers and operator all included in the price.</p></div>
+    <div class="pricing-grid">
+      <div class="price-card reveal"><div class="price-tag">€8</div><div class="price-unit">per piece, small items</div><div class="price-name">Pocket Size</div><div class="price-desc">Pouches, drawstring bags and compact canvas items.</div><ul class="price-list"><li>Pouches &amp; small bags</li><li>Name or initials print</li><li>One color transfer</li><li>Operator included</li></ul></div>
+      <div class="price-card featured reveal"><div class="price-tag">€12</div><div class="price-unit">per piece, tote bags</div><div class="price-name">Tote Bag</div><div class="price-desc">The crowd favorite. A canvas tote personalized in 45 seconds.</div><ul class="price-list"><li>Canvas tote bag</li><li>Name, logo or design</li><li>Multi-color available</li><li>Operator included</li></ul></div>
+      <div class="price-card reveal"><div class="price-tag">€20</div><div class="price-unit">per piece, premium items</div><div class="price-name">Premium Canvas</div><div class="price-desc">Laptop sleeves, cosmetic bags and larger premium canvas goods.</div><ul class="price-list"><li>Laptop sleeves, large bags</li><li>Full-color brand print</li><li>Premium canvas quality</li><li>Operator included</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top"><div class="foot-nl"><div class="foot-nl-heading">Stay inspired.</div><p>Event inspiration once a month, no spam.</p><form class="nl-form" id="nlForm"><input type="email" placeholder="Your email address" required><button type="submit">Send</button></form></div>
+  <div class="foot-acts"><div class="foot-acts-label">Activations</div><ul class="foot-act-list">
+    <li><a href="live-monogramming.html"><div class="foot-act-left"><img src="images/img-card-mono.png" alt="" class="foot-act-thumb">Live Monogramming</div><span class="foot-act-arrow">VIEW</span></a></li>
+    <li><a href="perfume-bar.html"><div class="foot-act-left"><img src="images/perf-01.png" alt="" class="foot-act-thumb">Perfume Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
+    <li><a href="clicker-bar.html"><div class="foot-act-left"><img src="images/img-card-clicker.png" alt="" class="foot-act-thumb">Clicker Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
+    <li><a href="live-hot-press.html"><div class="foot-act-left"><img src="images/hot-03-tote-bag.png" alt="" class="foot-act-thumb">Live Hot Press Canvas</div><span class="foot-act-arrow">VIEW</span></a></li>
+  </ul></div></div>
+  <div class="foot-mid"><div class="foot-mid-info"><p>Amsterdam, Netherlands</p><p>hello@event.studio</p></div><div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="live-monogramming.html">Live Monogramming</a><a href="perfume-bar.html">Perfume Bar</a><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div><div><div class="foot-col-label">Company</div><div class="foot-col-links"><a href="catalog.html">Catalog</a><a href="pricing.html">Private Events</a><a href="pricing.html">Corporate Events</a><a href="about.html">About</a><a href="index.html#faq">FAQ</a></div></div></div>
+  <div class="foot-bottom"><p>© 2026 Event Studio. All rights reserved.</p><div class="foot-socials"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">TikTok</a></div></div>
+</footer>
+<script>
+const ham=document.getElementById('hamburger'),overlay=document.getElementById('mobileOverlay'),mobClose=document.getElementById('mobClose');
+ham.addEventListener('click',()=>{ham.classList.add('open');overlay.classList.add('open');});
+if(mobClose)mobClose.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');});
+overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');}));
+document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(r));
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Sent';b.disabled=true;});
+</script>
+</body>
+</html>
