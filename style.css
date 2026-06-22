@@ -14,8 +14,8 @@
   --r-pill:      100px;
   --pad:         2.5vw;
   --mw:          1400px;
-  --nav-glass:   rgba(255,255,255,0.78);
-  --nav-border:  rgba(0,0,0,0.08);
+  --nav-glass:   rgba(255,255,255,0.94);
+  --nav-border:  transparent;
 }
 
 /* ── RESET ──────────────────────────────────────────────── */
@@ -120,23 +120,24 @@ button { font-family: inherit; }
 .nav-drop:hover .nav-dropdown { display: block; }
 
 .nav-dropdown-menu {
-  background: rgba(18,18,18,0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border-radius: 16px;
   padding: 8px;
-  border: 1px solid rgba(255,255,255,0.09);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 .nav-dropdown-menu a {
   display: block;
-  color: rgba(255,255,255,0.8);
+  color: rgba(0,0,0,0.62);
   font-size: 14px;
   font-weight: 500;
   padding: 10px 14px;
   border-radius: 10px;
   transition: background .2s, color .2s;
 }
-.nav-dropdown-menu a:hover { background: rgba(168,224,0,0.15); color: #fff; }
+.nav-dropdown-menu a:hover { background: rgba(0,0,0,0.05); color: rgba(0,0,0,0.85); }
 
 /* Right pill: Get a Quote */
 .btn-quote {
