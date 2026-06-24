@@ -70,6 +70,13 @@
     .sec-cta p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 500px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+    .pricing-toggle { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .ptgl-btn { padding: 11px 24px; border-radius: var(--r-pill); font-size: 14px; font-weight: 500; border: 1.5px solid rgba(30,30,30,0.15); background: #fff; color: rgba(30,30,30,0.6); cursor: pointer; transition: all .2s; font-family: 'Inter',sans-serif; }
+    .ptgl-btn.active { background: var(--char); color: #fff; border-color: var(--char); }
+    .ptgl-btn:not(.active):hover { border-color: var(--char); color: var(--char); }
+    .pricing-panel { display: none; }
+    .pricing-panel.shown { display: block; }
+    .fs-note { font-size: 13px; color: var(--muted); margin-top: 20px; }
     @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .why-list { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) { .items-grid { grid-template-columns: repeat(2,1fr); } .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-why,.sec-items,.sec-pricing,.sec-cta { padding: 60px 5vw; } }
   </style>
@@ -175,11 +182,60 @@
 
 <section class="sec-pricing">
   <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">Pricing</div><h2 class="sec-h2">Priced Per Piece</h2><p class="sec-sub">All materials, letter tiles and equipment included. No hidden costs.</p></div>
-    <div class="pricing-grid">
-      <div class="price-card reveal"><div class="price-tag">€8</div><div class="price-unit">per piece, up to 4 letters</div><div class="price-name">Short &amp; Sweet</div><div class="price-desc">Initials or short words. Great for high-volume events with quick throughput.</div><ul class="price-list"><li>Up to 4 letter tiles</li><li>Key ring included</li><li>All colors available</li><li>Operator included</li></ul></div>
-      <div class="price-card featured reveal"><div class="price-tag">€14</div><div class="price-unit">per piece, up to 6 letters</div><div class="price-name">Name Plate</div><div class="price-desc">Full first name or a meaningful word. The most popular format at events.</div><ul class="price-list"><li>Up to 6 letter tiles</li><li>Premium key ring</li><li>All colors available</li><li>Operator included</li></ul></div>
-      <div class="price-card reveal"><div class="price-tag">€18</div><div class="price-unit">per piece, up to 10 letters</div><div class="price-name">Full Phrase</div><div class="price-desc">Full names, words or short phrases. Perfect for VIP guests and premium events.</div><ul class="price-list"><li>Up to 10 letter tiles</li><li>Heavy-duty key ring</li><li>Custom color options</li><li>Operator included</li></ul></div>
+    <div class="sec-hdr reveal"><div class="sec-badge">How You Book It</div><h2 class="sec-h2">Two Ways to Get the Clicker Bar</h2><p class="sec-sub">Run it yourself with our Activation Box, or let our team handle everything on-site. Same experience, different level of involvement.</p></div>
+    <div class="pricing-toggle">
+      <button class="ptgl-btn active" data-panel="box">The Activation Box</button>
+      <button class="ptgl-btn" data-panel="fs">Full Service</button>
+    </div>
+    <div class="pricing-panel shown" id="panel-box">
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-tag">€195</div>
+          <div class="price-unit">up to 30 guests</div>
+          <div class="price-name">Starter Box</div>
+          <div class="price-desc">Everything packed and shipped via PostNL. You set up, your guests click, you send it back.</div>
+          <ul class="price-list"><li>30 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Branded table cover</li><li>Setup guide + return label</li></ul>
+        </div>
+        <div class="price-card featured reveal">
+          <div class="price-tag">€360</div>
+          <div class="price-unit">up to 75 guests</div>
+          <div class="price-name">Popular Box</div>
+          <div class="price-desc">The most ordered size. Comfortable for medium-sized events with buffer stock built in.</div>
+          <ul class="price-list"><li>75 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Table cover + backdrop banner</li><li>Setup guide + return label</li><li>10 extra sets as buffer</li></ul>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-tag">€620</div>
+          <div class="price-unit">up to 150 guests</div>
+          <div class="price-name">Large Box</div>
+          <div class="price-desc">For larger events. Full branded station kit, generous buffer stock and priority PostNL shipping.</div>
+          <ul class="price-list"><li>150 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Full branded station kit</li><li>Setup guide + return label</li><li>20 extra sets as buffer</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-panel" id="panel-fs">
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-tag">€850</div>
+          <div class="price-unit">up to 60 guests</div>
+          <div class="price-name">Starter</div>
+          <div class="price-desc">One trained specialist, 2-hour activation window. We arrive, set up, host and pack down.</div>
+          <ul class="price-list"><li>1 specialist on-site</li><li>2-hour window</li><li>Full setup and breakdown</li><li>Up to 60 keychains</li><li>Custom design included</li></ul>
+        </div>
+        <div class="price-card featured reveal">
+          <div class="price-tag">€1,600</div>
+          <div class="price-unit">up to 130 guests</div>
+          <div class="price-name">Classic</div>
+          <div class="price-desc">Two specialists, 3-hour window, decorated station. The most complete on-site experience.</div>
+          <ul class="price-list"><li>2 specialists on-site</li><li>3-hour window</li><li>Branded station decor</li><li>Up to 130 keychains</li><li>Pre-event design call</li><li>Full setup and breakdown</li></ul>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-tag">€2,800+</div>
+          <div class="price-unit">130+ guests, bespoke</div>
+          <div class="price-name">Full Scale</div>
+          <div class="price-desc">Large events, full-day activations or multi-slot formats. Custom quote based on your brief.</div>
+          <ul class="price-list"><li>3+ specialists on-site</li><li>Full-day or multi-slot</li><li>Bespoke station design</li><li>Unlimited keychains</li><li>On-site coordinator</li></ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -201,6 +257,7 @@ if(mobClose)mobClose.addEventListener('click',()=>{ham.classList.remove('open');
 overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');}));
 document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(r));
 document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Sent';b.disabled=true;});
+document.querySelectorAll('.ptgl-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.ptgl-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.pricing-panel').forEach(p=>p.classList.remove('shown'));document.getElementById('panel-'+btn.dataset.panel).classList.add('shown');});});
 </script>
 </body>
 </html>

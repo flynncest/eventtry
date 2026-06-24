@@ -70,6 +70,12 @@
     .sec-cta p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 500px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+    .pricing-toggle { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .ptgl-btn { padding: 11px 24px; border-radius: var(--r-pill); font-size: 14px; font-weight: 500; border: 1.5px solid rgba(30,30,30,0.15); background: #fff; color: rgba(30,30,30,0.6); cursor: pointer; transition: all .2s; font-family: 'Inter',sans-serif; }
+    .ptgl-btn.active { background: var(--char); color: #fff; border-color: var(--char); }
+    .ptgl-btn:not(.active):hover { border-color: var(--char); color: var(--char); }
+    .pricing-panel { display: none; }
+    .pricing-panel.shown { display: block; }
     @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .options-grid { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) { .items-grid { grid-template-columns: repeat(2,1fr); } .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-options,.sec-items,.sec-pricing,.sec-cta { padding: 60px 5vw; } }
   </style>
@@ -169,11 +175,60 @@
 
 <section class="sec-pricing">
   <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">Pricing</div><h2 class="sec-h2">Priced Per Printed Piece</h2><p class="sec-sub">Canvas items, heat press equipment, vinyl transfers and operator all included in the price.</p></div>
-    <div class="pricing-grid">
-      <div class="price-card reveal"><div class="price-tag">€8</div><div class="price-unit">per piece, small items</div><div class="price-name">Pocket Size</div><div class="price-desc">Pouches, drawstring bags and compact canvas items.</div><ul class="price-list"><li>Pouches &amp; small bags</li><li>Name or initials print</li><li>One color transfer</li><li>Operator included</li></ul></div>
-      <div class="price-card featured reveal"><div class="price-tag">€12</div><div class="price-unit">per piece, tote bags</div><div class="price-name">Tote Bag</div><div class="price-desc">The crowd favorite. A canvas tote personalized in 45 seconds.</div><ul class="price-list"><li>Canvas tote bag</li><li>Name, logo or design</li><li>Multi-color available</li><li>Operator included</li></ul></div>
-      <div class="price-card reveal"><div class="price-tag">€20</div><div class="price-unit">per piece, premium items</div><div class="price-name">Premium Canvas</div><div class="price-desc">Laptop sleeves, cosmetic bags and larger premium canvas goods.</div><ul class="price-list"><li>Laptop sleeves, large bags</li><li>Full-color brand print</li><li>Premium canvas quality</li><li>Operator included</li></ul></div>
+    <div class="sec-hdr reveal"><div class="sec-badge">How You Book It</div><h2 class="sec-h2">Two Ways to Get the Hot Press</h2><p class="sec-sub">Order a box delivered to your door, or let our team run the whole thing on-site. Same great activation either way.</p></div>
+    <div class="pricing-toggle">
+      <button class="ptgl-btn active" data-panel="box">The Activation Box</button>
+      <button class="ptgl-btn" data-panel="fs">Full Service</button>
+    </div>
+    <div class="pricing-panel shown" id="panel-box">
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-tag">€230</div>
+          <div class="price-unit">up to 30 guests</div>
+          <div class="price-name">Starter Box</div>
+          <div class="price-desc">Shipped via PostNL with everything inside. Heat press unit, canvas items, vinyl transfers and return label.</div>
+          <ul class="price-list"><li>30 canvas items of your choice</li><li>Heat press unit + vinyl transfers</li><li>Branded table cover</li><li>Setup guide + return label</li></ul>
+        </div>
+        <div class="price-card featured reveal">
+          <div class="price-tag">€420</div>
+          <div class="price-unit">up to 75 guests</div>
+          <div class="price-name">Popular Box</div>
+          <div class="price-desc">The most ordered size. Room for a mix of tote sizes, with backdrop banner for a polished station look.</div>
+          <ul class="price-list"><li>75 canvas items of your choice</li><li>Heat press unit + vinyl transfers</li><li>Table cover + backdrop banner</li><li>Setup guide + return label</li><li>5 extra items as buffer</li></ul>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-tag">€720</div>
+          <div class="price-unit">up to 150 guests</div>
+          <div class="price-name">Large Box</div>
+          <div class="price-desc">For larger events. Full branded station kit and generous buffer stock to handle the full crowd comfortably.</div>
+          <ul class="price-list"><li>150 canvas items of your choice</li><li>Heat press unit + vinyl transfers</li><li>Full branded station kit</li><li>Setup guide + return label</li><li>10 extra items as buffer</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-panel" id="panel-fs">
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-tag">€850</div>
+          <div class="price-unit">up to 60 guests</div>
+          <div class="price-name">Starter</div>
+          <div class="price-desc">One trained specialist, 2-hour activation window. We handle setup, hosting and breakdown.</div>
+          <ul class="price-list"><li>1 specialist on-site</li><li>2-hour window</li><li>Full setup and breakdown</li><li>Up to 60 printed pieces</li><li>Custom design included</li></ul>
+        </div>
+        <div class="price-card featured reveal">
+          <div class="price-tag">€1,600</div>
+          <div class="price-unit">up to 130 guests</div>
+          <div class="price-name">Classic</div>
+          <div class="price-desc">Two specialists, 3-hour window, decorated station. The most complete on-site experience we offer.</div>
+          <ul class="price-list"><li>2 specialists on-site</li><li>3-hour window</li><li>Branded station decor</li><li>Up to 130 printed pieces</li><li>Pre-event design call</li><li>Full setup and breakdown</li></ul>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-tag">€2,800+</div>
+          <div class="price-unit">130+ guests, bespoke</div>
+          <div class="price-name">Full Scale</div>
+          <div class="price-desc">Large events, full-day runs or multi-slot formats. Custom quote tailored to your event brief.</div>
+          <ul class="price-list"><li>3+ specialists on-site</li><li>Full-day or multi-slot</li><li>Bespoke station design</li><li>Unlimited printed pieces</li><li>On-site coordinator</li></ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -195,6 +250,7 @@ if(mobClose)mobClose.addEventListener('click',()=>{ham.classList.remove('open');
 overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');}));
 document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(r));
 document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Sent';b.disabled=true;});
+document.querySelectorAll('.ptgl-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.ptgl-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.pricing-panel').forEach(p=>p.classList.remove('shown'));document.getElementById('panel-'+btn.dataset.panel).classList.add('shown');});});
 </script>
 </body>
 </html>
