@@ -16,7 +16,7 @@
     /* ── HERO ───────────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.44)), url('images/hero-bg.png');
+      background: url('images/hero-bg.png');
       background-size: cover;
       background-position: center;
       padding: 140px var(--pad) 100px;
@@ -35,9 +35,9 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: rgba(255,255,255,0.82);
+      background: rgba(30,30,30,0.07);
+      border: 1px solid rgba(30,30,30,0.14);
+      color: rgba(30,30,30,0.6);
       font-size: 12px;
       font-weight: 500;
       padding: 5px 14px;
@@ -49,7 +49,7 @@
     .hero h1 {
       font-size: clamp(28px, 3.5vw, 52px);
       font-weight: 400;
-      color: #fff;
+      color: var(--char);
       line-height: 1.1;
       letter-spacing: -1.5px;
       max-width: 640px;
@@ -57,19 +57,19 @@
     }
     .hero-sub {
       font-size: 16px;
-      color: rgba(255,255,255,0.68);
+      color: rgba(30,30,30,0.55);
       max-width: 480px;
       line-height: 1.7;
       margin-bottom: 36px;
     }
     .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .hero .btn-outline {
-      color: rgba(255,255,255,0.82);
-      border-color: rgba(255,255,255,0.28);
+      color: rgba(30,30,30,0.7);
+      border-color: rgba(30,30,30,0.22);
     }
     .hero .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.5);
+      background: rgba(30,30,30,0.05);
+      border-color: rgba(30,30,30,0.4);
     }
 
     /* ── ACTIVATIONS ────────────────────────────────────────── */
