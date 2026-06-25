@@ -317,7 +317,10 @@ button { font-family: inherit; }
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--muted);
+  background: #4c2a19;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
   margin-bottom: 14px;
 }
 .sec-badge-lime {
@@ -326,7 +329,10 @@ button { font-family: inherit; }
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(30,30,30,0.55);
+  background: #4c2a19;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
   margin-bottom: 14px;
 }
 .sec-h2 {
