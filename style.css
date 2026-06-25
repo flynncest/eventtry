@@ -1,7 +1,7 @@
 /* ── TOKENS ─────────────────────────────────────────────── */
 :root {
-  --lime:        #c7a685;
-  --lime-lt:     #d4b99a;
+  --lime:        #4c2a19;
+  --lime-lt:     #6b3d26;
   --lime-soft:   #ebdecb;
   --char:        #1E1E1E;
   --char-dk:     #111111;
@@ -141,11 +141,9 @@ button { font-family: inherit; }
 
 /* Right pill: Get a Quote */
 .btn-quote {
-  background: var(--nav-glass);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid var(--nav-border);
-  color: rgba(0,0,0,0.75);
+  background: #4c2a19;
+  border: 1px solid transparent;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   padding: 10px 22px;
@@ -155,7 +153,7 @@ button { font-family: inherit; }
   flex-shrink: 0;
   display: block;
 }
-.btn-quote:hover { background: rgba(255,255,255,0.95); }
+.btn-quote:hover { background: #6b3d26; }
 
 /* Hamburger */
 .hamburger {
