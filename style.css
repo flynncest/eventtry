@@ -145,7 +145,7 @@ button { font-family: inherit; }
   border: 1px solid transparent;
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   padding: 10px 22px;
   border-radius: var(--r-pill);
   transition: background .2s;
@@ -348,15 +348,15 @@ button { font-family: inherit; }
 /* ── BUTTONS ─────────────────────────────────────────────── */
 .btn-primary {
   display: inline-block;
-  background: var(--lime);
+  background: #fff;
   color: var(--char);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 15px;
   padding: 13px 26px;
   border-radius: var(--r-pill);
   transition: background .2s, transform .2s;
 }
-.btn-primary:hover { background: var(--lime-lt); transform: translateY(-1px); }
+.btn-primary:hover { background: #f5f0eb; transform: translateY(-1px); }
 
 .btn-dark {
   display: inline-block;
