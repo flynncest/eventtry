@@ -28,7 +28,7 @@
     }
     .act-hero-text .sec-badge-lime { color: rgba(30,30,30,0.55); margin-bottom: 14px; }
     .act-hero-text h1 {
-      font-size: clamp(38px, 5.5vw, 80px);
+      font-size: clamp(30px, 4.4vw, 64px);
       font-weight: 400;
       letter-spacing: -2.5px;
       color: var(--char);
@@ -49,7 +49,7 @@
     .stat-bar {
       display: flex; gap: 0;
       background: rgba(255,255,255,0.72);
-      border-radius: 16px;
+      border-radius: 8px;
       margin-top: 12px;
       overflow: hidden;
       max-width: 460px;
@@ -81,7 +81,7 @@
     .sec-items { padding: 88px var(--pad); background: var(--soft); }
     .items-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
     .item-card {
-      background: #fff; border-radius: 16px; overflow: hidden;
+      background: #fff; border-radius: 8px; overflow: hidden;
       transition: transform .3s, box-shadow .3s;
     }
     .item-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.09); }
@@ -96,7 +96,7 @@
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
     .price-card {
       border: 1.5px solid rgba(30,30,30,0.1);
-      border-radius: 20px; padding: 32px 28px;
+      border-radius: 8px; padding: 32px 28px;
     }
     .price-card.featured {
       background: var(--lime);
@@ -141,10 +141,12 @@
       <div class="nav-drop">
         <button class="nav-drop-btn">Activations<svg class="chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1.5l5 5 5-5"/></svg></button>
         <div class="nav-dropdown"><div class="nav-dropdown-menu">
-          <a href="live-monogramming.html" style="color:var(--lime)">Live Monogramming</a><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a>
+          <a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a>
         </div></div>
       </div>
-      <a href="catalog.html" class="nav-link">Catalog</a><a href="pricing.html" class="nav-link">How It Works</a><a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="catalog.html" class="nav-link">Catalog</a>
+      <a href="pricing.html" class="nav-link">How It Works</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
     </div>
     <button class="hamburger" id="hamburger"><span></span><span></span></button>
   </div>
@@ -153,14 +155,16 @@
 <div class="mobile-overlay" id="mobileOverlay">
   <div class="mob-top">
     <a href="index.html" class="mob-logo">Event</a>
-    <div class="mob-topnav"><a href="catalog.html">Catalog</a><a href="pricing.html">How It Works</a><a href="index.html#faq">FAQ</a></div>
     <button class="mob-close" id="mobClose"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
   </div>
   <div class="mob-panel">
-    <a href="live-monogramming.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-mono.png" alt="Live Monogramming"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Monogramming</span></div></a>
     <a href="clicker-bar.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-clicker.png" alt="Clicker Bar"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Clicker Bar</span></div></a>
     <a href="live-hot-press.html" class="mob-item"><div class="mob-item-img"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Hot Press Canvas</span></div></a>
-    <a href="catalog.html" class="mob-all">Browse All Catalog <span>→</span></a>
+  </div>
+  <div class="mob-nav-links">
+    <a href="catalog.html" class="mob-nav-text">Catalog</a>
+    <a href="pricing.html" class="mob-nav-text">How It Works</a>
+    <a href="index.html#faq" class="mob-nav-text">FAQ</a>
   </div>
   <a href="book.html" class="mob-quote">Get a Quote</a>
 </div>
@@ -168,9 +172,8 @@
 <section class="act-hero">
   <div class="act-hero-inner">
     <div class="act-hero-text">
-      <div class="sec-badge-lime">Full Service Activation</div>
       <h1>Live<br>Monogramming</h1>
-      <p>Your guests pick a leather good, choose their name or initials, and our artisan stamps it in gold or silver foil in under two minutes. A wallet or notebook they will use for years — with your event on it.</p>
+      <p>Your guests pick a leather good, choose their name or initials, and our artisan stamps it in gold or silver foil in under two minutes. A wallet or notebook they will use for years. Your event on it.</p>
       <a href="book.html" class="btn-dark">Book Live Monogramming</a>
       <div class="stat-bar">
         <div class="stat-bar-item"><div class="stat-bar-num">€12+</div><div class="stat-bar-lbl">Per piece</div></div>
@@ -216,7 +219,7 @@
     <div class="sec-hdr reveal">
       <div class="sec-badge">Items</div>
       <h2 class="sec-h2">What Guests Can Choose From</h2>
-      <p class="sec-sub">Every item comes in multiple colours. We can add your logo alongside the guest's monogram — great for product launches and VIP gifting.</p>
+      <p class="sec-sub">Every item comes in multiple colours. We can add your logo alongside the guest's monogram. Great for product launches and VIP gifting.</p>
     </div>
     <div class="items-grid">
       <div class="item-card reveal"><div class="item-img"><img src="images/mono-01-coin-pouch.png" alt="Coin Pouch"></div><div class="item-info"><div class="item-name">Coin Pouch</div><div class="item-price">From €12</div></div></div>
@@ -288,14 +291,13 @@
   <div class="foot-top">
     <div class="foot-nl"><div class="foot-nl-heading">Stay inspired.</div><p>Event activation ideas and inspiration once a month, no spam.</p><form class="nl-form" id="nlForm"><input type="email" placeholder="Your email address" required><button type="submit">Send</button></form></div>
     <div class="foot-acts"><div class="foot-acts-label">Activations</div><ul class="foot-act-list">
-      <li><a href="live-monogramming.html"><div class="foot-act-left"><img src="images/img-card-mono.png" alt="" class="foot-act-thumb">Live Monogramming</div><span class="foot-act-arrow">VIEW</span></a></li>
       <li><a href="clicker-bar.html"><div class="foot-act-left"><img src="images/img-card-clicker.png" alt="" class="foot-act-thumb">Clicker Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
       <li><a href="live-hot-press.html"><div class="foot-act-left"><img src="images/hot-03-tote-bag.png" alt="" class="foot-act-thumb">Live Hot Press Canvas</div><span class="foot-act-arrow">VIEW</span></a></li>
     </ul></div>
   </div>
   <div class="foot-mid">
     <div class="foot-mid-info"><p>Amsterdam, Netherlands</p><p>hello@event.studio</p></div>
-    <div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="live-monogramming.html">Live Monogramming</a><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div>
+    <div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div>
     <div><div class="foot-col-label">Company</div><div class="foot-col-links"><a href="catalog.html">Catalog</a><a href="pricing.html">How It Works</a><a href="about.html">About</a><a href="index.html#faq">FAQ</a></div></div>
   </div>
   <div class="foot-bottom"><p>© 2026 Event Studio. All rights reserved.</p><div class="foot-socials"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">TikTok</a></div></div>

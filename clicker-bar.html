@@ -14,71 +14,83 @@
     .act-hero { min-height: 65vh; background: #F4F4F4; display: flex; align-items: center; padding: 140px var(--pad) 72px; border-radius: 0 0 40px 40px; }
     .act-hero-inner { max-width: var(--mw); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .act-hero-text .sec-badge-lime { color: rgba(30,30,30,0.55); margin-bottom: 14px; }
-    .act-hero-text h1 { font-size: clamp(38px,5.5vw,80px); font-weight: 400; letter-spacing: -2.5px; color: var(--char); line-height: 1.0; margin-bottom: 16px; }
+    .act-hero-text h1 { font-size: clamp(30px,4.4vw,64px); font-weight: 400; letter-spacing: -2.5px; color: var(--char); line-height: 1.0; margin-bottom: 16px; }
     .act-hero-text p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 480px; line-height: 1.65; margin-bottom: 28px; }
     .act-hero-img { display: flex; justify-content: center; align-items: center; height: 380px; }
     .act-hero-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
-    .stat-bar { display: flex; background: rgba(255,255,255,0.72); border-radius: 16px; margin-top: 12px; overflow: hidden; max-width: 460px; }
+    .stat-bar { display: flex; background: rgba(255,255,255,0.72); border-radius: 8px; margin-top: 12px; overflow: hidden; max-width: 460px; }
     .stat-bar-item { flex: 1; padding: 16px 20px; border-right: 1px solid rgba(0,0,0,0.07); }
     .stat-bar-item:last-child { border-right: none; }
     .stat-bar-num { font-size: 22px; font-weight: 600; color: var(--char); }
     .stat-bar-lbl { font-size: 11px; color: rgba(30,30,30,0.55); font-weight: 500; }
 
     .sec-how { padding: 88px var(--pad); background: #fff; }
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 52px; }
-    .step { text-align: center; }
-    .step-num { width: 52px; height: 52px; background: var(--lime-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: var(--char); margin: 0 auto 18px; }
-    .step h4 { font-size: 17px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
-    .step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+    .step { background: #F4F4F4; border-radius: 8px; overflow: hidden; }
+    .step-img { height: 55vh; width: 100%; overflow: hidden; }
+    .step-img img { width: 100%; height: 100%; object-fit: cover; }
+    .step-body { padding: 24px 24px 28px; }
+    .step-body h4 { font-size: 18px; font-weight: 600; color: var(--char); margin-bottom: 8px; letter-spacing: -0.3px; }
+    .step-body p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-    .sec-why { padding: 88px var(--pad); background: var(--soft); }
-    .why-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
-    .why-item { background: #fff; border-radius: 20px; padding: 28px 24px; }
-    .why-icon { width: 46px; height: 46px; background: var(--lime-soft); border-radius: 13px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .sec-why { padding: 88px var(--pad); background: #fff; }
+    .why-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+
+    .design-callout { margin-top: 48px; background: var(--lime); border-radius: 8px; padding: 48px 52px; display: grid; grid-template-columns: 1fr 340px; gap: 52px; align-items: start; }
+    .design-callout-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.48); margin-bottom: 14px; }
+    .design-callout h3 { font-size: 24px; font-weight: 600; color: #fff; letter-spacing: -0.5px; margin-bottom: 12px; line-height: 1.2; }
+    .design-callout > div > p { font-size: 14.5px; color: rgba(255,255,255,0.70); line-height: 1.65; margin-bottom: 28px; }
+    .design-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .design-step { background: rgba(255,255,255,0.09); border-radius: 8px; padding: 18px 20px; }
+    .design-step-n { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.22); line-height: 1; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .design-step-title { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 5px; }
+    .design-step-text { font-size: 12px; color: rgba(255,255,255,0.60); line-height: 1.55; }
+    .design-example-card { background: rgba(255,255,255,0.10); border-radius: 8px; padding: 28px 30px; }
+    .design-example-tag { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .design-example-card h4 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 14px; letter-spacing: -0.3px; line-height: 1.3; }
+    .design-example-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .design-example-list li { font-size: 13px; color: rgba(255,255,255,0.68); display: flex; align-items: flex-start; gap: 9px; line-height: 1.45; }
+    .design-example-list li::before { content: ''; display: block; width: 5px; height: 5px; background: rgba(255,255,255,0.35); border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .design-meta { margin-top: 18px; font-size: 11.5px; color: rgba(255,255,255,0.40); padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.10); line-height: 1.5; }
+    .why-item { background: #fff; border-radius: 8px; padding: 28px 24px; }
+    .why-icon { width: 46px; height: 46px; background: var(--lime-soft); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
     .why-icon svg { width: 22px; height: 22px; }
     .why-item h4 { font-size: 16px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
     .why-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     .sec-items { padding: 88px var(--pad); background: #fff; }
-    .items-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
-    .item-card { background: var(--soft); border-radius: 16px; overflow: hidden; transition: transform .3s; }
-    .item-card:hover { transform: translateY(-3px); }
-    .item-img { height: 180px; display: flex; align-items: center; justify-content: center; padding: 14px; }
-    .item-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
-    .item-info { padding: 14px 16px 18px; }
-    .item-name { font-size: 14px; font-weight: 600; color: var(--char); margin-bottom: 4px; }
-    .item-price { font-size: 12.5px; color: var(--muted); }
+    .sec-items .sec-h2 { color: var(--char); }
+    .sec-items .sec-sub { color: var(--muted); }
 
-    .sec-pricing { padding: 88px var(--pad); background: var(--soft); }
+    .sec-pricing { padding: 88px var(--pad); background: #fff; }
+    .sec-booking { padding: 88px var(--pad); background: #fff; }
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-    .price-card { border: 1.5px solid rgba(30,30,30,0.1); border-radius: 20px; padding: 32px 28px; background: #fff; }
+    .price-card { border: 1.5px solid rgba(30,30,30,0.1); border-radius: 8px; padding: 32px 28px; background: #fff; }
     .price-card.featured { background: var(--lime); border-color: var(--lime); }
     .price-tag { font-size: 36px; font-weight: 600; color: var(--char); letter-spacing: -1px; margin-bottom: 4px; }
+    .price-card.featured .price-tag { color: #fff; }
     .price-unit { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-    .price-card.featured .price-unit { color: rgba(30,30,30,0.55); }
+    .price-card.featured .price-unit { color: rgba(255,255,255,0.70); }
     .price-name { font-size: 18px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
     .price-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
-    .price-card.featured .price-desc { color: rgba(30,30,30,0.6); }
+    .price-card.featured .price-desc { color: rgba(255,255,255,0.75); }
+    .price-card.featured .price-name { color: #fff; }
     .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .price-list li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-    .price-card.featured .price-list li { color: rgba(30,30,30,0.65); }
+    .price-card.featured .price-list li { color: rgba(255,255,255,0.85); }
     .price-list li::before { content:''; display:block; width:16px; height:16px; background:var(--lime-soft); border-radius:50%; flex-shrink:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8l3 3 5-5' stroke='%234c2a19' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:center; }
-    .price-card.featured .price-list li::before { background-color:rgba(255,255,255,0.5); }
+    .price-card.featured .price-list li::before { background-color:rgba(255,255,255,0.25); }
 
     .sec-cta { padding: 88px var(--pad); background: var(--lime-soft); text-align: center; }
     .sec-cta h2 { font-size: clamp(28px,3.5vw,52px); font-weight: 600; letter-spacing: -1.5px; color: var(--char); margin-bottom: 14px; }
     .sec-cta p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 500px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    .pricing-toggle { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
-    .ptgl-btn { padding: 11px 24px; border-radius: var(--r-pill); font-size: 14px; font-weight: 500; border: 1.5px solid rgba(30,30,30,0.15); background: #fff; color: rgba(30,30,30,0.6); cursor: pointer; transition: all .2s; font-family: 'Inter',sans-serif; }
-    .ptgl-btn.active { background: var(--char); color: #fff; border-color: var(--char); }
-    .ptgl-btn:not(.active):hover { border-color: var(--char); color: var(--char); }
-    .pricing-panel { display: none; }
-    .pricing-panel.shown { display: block; }
-    .fs-note { font-size: 13px; color: var(--muted); margin-top: 20px; }
-    @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .why-list { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) { .items-grid { grid-template-columns: repeat(2,1fr); } .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-why,.sec-items,.sec-pricing,.sec-cta { padding: 60px 5vw; } }
+    .pricing-contact { margin-top: 24px; text-align: center; font-size: 15px; color: rgba(30,30,30,0.55); }
+    .pricing-contact a { color: var(--lime); font-weight: 600; }
+
+    @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .why-list { grid-template-columns: repeat(2, 1fr); } .pricing-grid { grid-template-columns: 1fr; } .design-callout { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-why,.sec-items,.sec-pricing,.sec-booking { padding: 60px 5vw; } .why-list { grid-template-columns: 1fr; } .design-callout { padding: 32px 24px; } }
   </style>
 </head>
 <body>
@@ -86,9 +98,11 @@
   <a href="index.html" class="nav-logo">Event</a>
   <div class="nav-links">
     <div class="nav-drop"><button class="nav-drop-btn">Activations<svg class="chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1.5l5 5 5-5"/></svg></button>
-    <div class="nav-dropdown"><div class="nav-dropdown-menu"><a href="live-monogramming.html">Live Monogramming</a><a href="clicker-bar.html" style="color:var(--lime)">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div></div>
-    <a href="catalog.html" class="nav-link">Catalog</a><a href="pricing.html" class="nav-link">How It Works</a><a href="index.html#faq" class="nav-link">FAQ</a>
+    <div class="nav-dropdown"><div class="nav-dropdown-menu"><a href="clicker-bar.html" style="color:var(--lime)">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div></div>
   </div>
+      <a href="catalog.html" class="nav-link">Catalog</a>
+      <a href="pricing.html" class="nav-link">How It Works</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
   <button class="hamburger" id="hamburger"><span></span><span></span></button>
 </div>
   <a href="book.html" class="btn-quote">Get a Quote</a>
@@ -96,14 +110,16 @@
 <div class="mobile-overlay" id="mobileOverlay">
   <div class="mob-top">
     <a href="index.html" class="mob-logo">Event</a>
-    <div class="mob-topnav"><a href="catalog.html">Catalog</a><a href="pricing.html">How It Works</a><a href="index.html#faq">FAQ</a></div>
     <button class="mob-close" id="mobClose"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
   </div>
   <div class="mob-panel">
-    <a href="live-monogramming.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-mono.png" alt="Live Monogramming"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Monogramming</span></div></a>
     <a href="clicker-bar.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-clicker.png" alt="Clicker Bar"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Clicker Bar</span></div></a>
     <a href="live-hot-press.html" class="mob-item"><div class="mob-item-img"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Hot Press Canvas</span></div></a>
-    <a href="catalog.html" class="mob-all">Browse All Catalog <span>→</span></a>
+  </div>
+  <div class="mob-nav-links">
+    <a href="catalog.html" class="mob-nav-text">Catalog</a>
+    <a href="pricing.html" class="mob-nav-text">How It Works</a>
+    <a href="index.html#faq" class="mob-nav-text">FAQ</a>
   </div>
   <a href="book.html" class="mob-quote">Get a Quote</a>
 </div>
@@ -111,7 +127,6 @@
 <section class="act-hero">
   <div class="act-hero-inner">
     <div class="act-hero-text">
-      <div class="sec-badge-lime">The Clicker Box</div>
       <h1>A keychain they built themselves.<br>Your logo on every key.</h1>
       <p>Order the box, set it up on a table, and your guests do the rest. They pick their letters, click them into a keychain and take it home. 26 alphabet letters, 4 colour options, custom-branded keys available.</p>
       <a href="book.html" class="btn-dark">Order the Clicker Box</a>
@@ -127,18 +142,124 @@
 
 <section class="sec-how">
   <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">The Experience</div><h2 class="sec-h2">Click, Spell, Keep.</h2><p class="sec-sub">No instructions needed. Guests figure it out in seconds and love every moment of it.</p></div>
+    <div class="sec-hdr reveal"><h2 class="sec-h2">Click, Spell, Keep.</h2><p class="sec-sub">No instructions needed. Guests figure it out in seconds and love every moment of it.</p></div>
     <div class="steps-grid">
-      <div class="step reveal"><div class="step-num">1</div><h4>Pick Your Letters</h4><p>Choose from the full alphabet. Spell your name, initials, a nickname, or something meaningful.</p></div>
-      <div class="step reveal"><div class="step-num">2</div><h4>Click Them In</h4><p>The letter keys click satisfyingly into a clear case. It's surprisingly fun. Guests often do it twice.</p></div>
-      <div class="step reveal"><div class="step-num">3</div><h4>Attach Your Ring</h4><p>Clip your finished keychain to your keys, bag, or lanyard. A fully custom accessory in under 3 minutes.</p></div>
+      <div class="step reveal">
+        <div class="step-img"><img src="images/img-card-clicker.png" alt="Browse the letter board"></div>
+        <div class="step-body"><h4>Browse the board</h4><p>All 26 letters are laid out on the display. Pick the ones that spell your name, initials, or anything that means something to you.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-img"><img src="images/click-01.png" alt="Click the keys together"></div>
+        <div class="step-body"><h4>Click them together</h4><p>Each key clicks into the case with a satisfying snap. Takes about 2 minutes. Guests often go quiet while they focus. Then grin when it's done.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-img"><img src="images/click-02.png" alt="Walk away with your keychain"></div>
+        <div class="step-body"><h4>Walk away with it</h4><p>Clip it to your keys or bag on the spot. Every guest leaves with something they made themselves. Your logo on every key.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pricing">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><h2 class="sec-h2">Simple pricing, sized for your event</h2><p class="sec-sub">All prices include VAT. Box ships to your venue. Setup guide and prepaid return label inside.</p></div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-tag">€395</div>
+        <div class="price-unit">incl. VAT · up to 100 guests</div>
+        <div class="price-name">Up to 100 Guests</div>
+        <div class="price-desc">Great for intimate events, team days, and smaller brand activations.</div>
+        <ul class="price-list"><li>Keys for up to 100 guests</li><li>+10% buffer stock included</li><li>Branded table cover</li><li>Display box + tabletop menu</li><li>Prepaid return label</li></ul>
+        <a href="book.html" class="btn-dark" style="display:block;text-align:center;margin-top:24px;">Order This Box</a>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-tag">€795</div>
+        <div class="price-unit">incl. VAT · up to 500 guests</div>
+        <div class="price-name">Up to 500 Guests</div>
+        <div class="price-desc">The most popular size. Fits conferences, product launches and brand events.</div>
+        <ul class="price-list"><li>Keys for up to 500 guests</li><li>+10% buffer stock included</li><li>Branded table cover</li><li>Display box + tabletop menu</li><li>Prepaid return label</li></ul>
+        <a href="book.html" class="btn-dark" style="display:block;text-align:center;margin-top:24px;background:#fff;color:var(--lime);">Order This Box</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tag">€950</div>
+        <div class="price-unit">incl. VAT · up to 1000 guests</div>
+        <div class="price-name">Up to 1000 Guests</div>
+        <div class="price-desc">For large-scale events. Generous buffer stock built in for a busy crowd.</div>
+        <ul class="price-list"><li>Keys for up to 1000 guests</li><li>+10% buffer stock included</li><li>Branded table cover</li><li>Display box + tabletop menu</li><li>Prepaid return label</li></ul>
+        <a href="book.html" class="btn-dark" style="display:block;text-align:center;margin-top:24px;">Order This Box</a>
+      </div>
+    </div>
+    <p class="pricing-contact reveal">Over 1,000 guests? <a href="book.html">Contact us</a> for a custom quote.</p>
+  </div>
+</section>
+
+<section class="sec-items">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal"><h2 class="sec-h2">What's Included in the Box</h2><p class="sec-sub">Everything arrives packed and ready. Open it, lay out the table, guests run the rest.</p></div>
+    <div class="box-items-grid">
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img"><img src="images/img-card-clicker.png" alt="Alphabet Letter Keys"></div>
+        <div class="box-item-card-body"><div class="box-item-card-name">26 Alphabet Letter Keys</div><div class="box-item-card-desc">White keys, full A–Z. Multiple of each letter so guests never run out.</div></div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img"><img src="images/click-01.png" alt="Space Keys & Frames"></div>
+        <div class="box-item-card-body"><div class="box-item-card-name">Space Keys & Frames</div><div class="box-item-card-desc">2, 3, 4 and 5-slot sizes. Quantities scaled to your guest count + 10% buffer.</div></div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img"><img src="images/click-02.png" alt="Table Setup Kit"></div>
+        <div class="box-item-card-body"><div class="box-item-card-name">Table Setup Kit</div><div class="box-item-card-desc">Branded table cloth, display box for the letters, and a tabletop how-it-works card.</div></div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img"><img src="images/click-03.png" alt="Custom Design Keys"></div>
+        <div class="box-item-card-body"><div class="box-item-card-name">Custom Keys (optional)</div><div class="box-item-card-desc">Add your logo or event name to any key. From €80 per 100 pieces, 2–14 weeks lead time.</div></div>
+      </div>
+    </div>
+
+    <div class="design-callout reveal">
+      <div>
+        <div class="design-callout-label">Optional add-on</div>
+        <h3>€80 per 100 pieces. Your logo on every key.</h3>
+        <p>Custom keys made with your brand. We handle the design. You just approve before we produce.</p>
+        <div class="design-steps">
+          <div class="design-step">
+            <div class="design-step-n">01</div>
+            <div class="design-step-title">Share your brief</div>
+            <div class="design-step-text">Logo, event name or a design file. That's all we need.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">02</div>
+            <div class="design-step-title">We design it</div>
+            <div class="design-step-text">Artwork prepared and sent as a preview within 3 days.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">03</div>
+            <div class="design-step-title">You approve</div>
+            <div class="design-step-text">Confirm or request small changes. We produce once you're happy.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">04</div>
+            <div class="design-step-title">Ships in the box</div>
+            <div class="design-step-text">Custom keys packed with the standard set. Ready to use.</div>
+          </div>
+        </div>
+      </div>
+      <div class="design-example-card">
+        <div class="design-example-tag">Example</div>
+        <h4>Corporate product launch</h4>
+        <ul class="design-example-list">
+          <li>Logo on the spacebar and two letter tiles</li>
+          <li>Guests built their keychain at the activation station</li>
+          <li>Your brand on their keyring long after the event</li>
+        </ul>
+        <div class="design-meta">€80 per 100 pieces · 2 to 4 week lead time · order at least 2 weeks before your event</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="sec-why">
   <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">Why It Works</div><h2 class="sec-h2">A souvenir on their keyring,<br>your logo in their hand, every day.</h2></div>
+    <div class="sec-hdr reveal"><h2 class="sec-h2">A souvenir on their keyring,<br>your logo in their hand, every day.</h2></div>
     <div class="why-list">
       <div class="why-item reveal">
         <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4c2a19" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
@@ -164,78 +285,53 @@
   </div>
 </section>
 
-<section class="sec-items">
+<section class="sec-booking">
   <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">Keychain Options</div><h2 class="sec-h2">Every Format, Every Length</h2><p class="sec-sub">1-key to 5-key sets. All 26 letters, four colours. Custom-branded keys available with your logo or event design.</p></div>
-    <div class="items-grid">
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-01.png" alt="3 Letter Keychain"></div><div class="item-info"><div class="item-name">3 Letters, Initials</div><div class="item-price">From €8</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-02.png" alt="5 Letter Keychain"></div><div class="item-info"><div class="item-name">5 Letters, Name</div><div class="item-price">From €12</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-03.png" alt="6 Letter Keychain"></div><div class="item-info"><div class="item-name">6 Letters</div><div class="item-price">From €14</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-04.png" alt="8 Letter Keychain"></div><div class="item-info"><div class="item-name">8 Letters, Phrase</div><div class="item-price">From €16</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-05.png" alt="Double Set"></div><div class="item-info"><div class="item-name">Double Set</div><div class="item-price">From €22</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-06.png" alt="Name Plate"></div><div class="item-info"><div class="item-name">Name Plate XL</div><div class="item-price">From €18</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-07.png" alt="Word Keychain"></div><div class="item-info"><div class="item-name">Word Keychain</div><div class="item-price">From €10</div></div></div>
-      <div class="item-card reveal"><div class="item-img"><img src="images/click-08.png" alt="Alphabet Set"></div><div class="item-info"><div class="item-name">Full Alphabet Set</div><div class="item-price">From €28</div></div></div>
+    <div class="sec-hdr reveal">
+      <h2 class="sec-h2">Ready to order?</h2>
+      <p class="sec-sub">Fill in your details and we'll send a custom quote within 48 hours. No commitment required.</p>
     </div>
-  </div>
-</section>
-
-<section class="sec-pricing">
-  <div class="sec-inner">
-    <div class="sec-hdr reveal"><div class="sec-badge">How You Book It</div><h2 class="sec-h2">Two ways to get the Clicker Box at your event</h2><p class="sec-sub">Run it yourself with our Activation Box, or let our team handle everything on-site. Same experience, different level of involvement.</p></div>
-    <div class="pricing-toggle">
-      <button class="ptgl-btn active" data-panel="box">The Activation Box</button>
-      <button class="ptgl-btn" data-panel="fs">Full Service</button>
-    </div>
-    <div class="pricing-panel shown" id="panel-box">
-      <div class="pricing-grid">
-        <div class="price-card reveal">
-          <div class="price-tag">€195</div>
-          <div class="price-unit">up to 30 guests</div>
-          <div class="price-name">Starter Box</div>
-          <div class="price-desc">Box arrives at your door. Open it, lay out the table, guests run the station. Return the box after with the label inside.</div>
-          <ul class="price-list"><li>30 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Branded table cover</li><li>Setup guide + return label</li></ul>
-        </div>
-        <div class="price-card featured reveal">
-          <div class="price-tag">€360</div>
-          <div class="price-unit">up to 75 guests</div>
-          <div class="price-name">Popular Box</div>
-          <div class="price-desc">The most ordered size. Comfortably fits a medium event with 10 spare sets built in as buffer.</div>
-          <ul class="price-list"><li>75 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Table cover + backdrop banner</li><li>Setup guide + return label</li><li>10 extra sets as buffer</li></ul>
-        </div>
-        <div class="price-card reveal">
-          <div class="price-tag">€620</div>
-          <div class="price-unit">up to 150 guests</div>
-          <div class="price-name">Large Box</div>
-          <div class="price-desc">For conferences and large parties. Full branded station kit and 20 spare sets so you never run short.</div>
-          <ul class="price-list"><li>150 custom keychains pre-cut</li><li>Letter tile sets included</li><li>Full branded station kit</li><li>Setup guide + return label</li><li>20 extra sets as buffer</li></ul>
+    <div class="book-grid" style="margin-top:52px">
+      <div class="book-sidebar reveal">
+        <h3>What happens next</h3>
+        <p>Our team reviews your event details and prepares a custom quote within 48 hours. No guesswork, no generic pricing.</p>
+        <div class="sidebar-bullets">
+          <div class="sb-item"><div class="sb-dot"></div><span>Response within 48 hours, guaranteed</span></div>
+          <div class="sb-item"><div class="sb-dot"></div><span>Custom quote based on your event size and activation</span></div>
+          <div class="sb-item"><div class="sb-dot"></div><span>Return shipping label included. Nothing extra to arrange after your event</span></div>
+          <div class="sb-item"><div class="sb-dot"></div><span>No spam. One email with your quote.</span></div>
         </div>
       </div>
-    </div>
-    <div class="pricing-panel" id="panel-fs">
-      <div class="pricing-grid">
-        <div class="price-card reveal">
-          <div class="price-tag">€850</div>
-          <div class="price-unit">up to 60 guests</div>
-          <div class="price-name">Starter</div>
-          <div class="price-desc">One trained specialist, 2-hour activation window. We arrive, set up, host and pack down.</div>
-          <ul class="price-list"><li>1 specialist on-site</li><li>2-hour window</li><li>Full setup and breakdown</li><li>Up to 60 keychains</li><li>Custom design included</li></ul>
+      <form class="book-form reveal">
+        <div class="form-section-label">Your Details</div>
+        <div class="form-row">
+          <div class="fg"><label>Your Name *</label><input type="text" placeholder="Jane Smith" required></div>
+          <div class="fg"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"></div>
         </div>
-        <div class="price-card featured reveal">
-          <div class="price-tag">€1,600</div>
-          <div class="price-unit">up to 130 guests</div>
-          <div class="price-name">Classic</div>
-          <div class="price-desc">Two specialists, 3-hour window, decorated station. The most complete on-site experience.</div>
-          <ul class="price-list"><li>2 specialists on-site</li><li>3-hour window</li><li>Branded station decor</li><li>Up to 130 keychains</li><li>Pre-event design call</li><li>Full setup and breakdown</li></ul>
+        <div class="form-row">
+          <div class="fg"><label>Email Address *</label><input type="email" placeholder="jane@company.com" required></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+31 6 12 345 678"></div>
         </div>
-        <div class="price-card reveal">
-          <div class="price-tag">€2,800+</div>
-          <div class="price-unit">130+ guests, bespoke</div>
-          <div class="price-name">Full Scale</div>
-          <div class="price-desc">Large events, full-day activations or multi-slot formats. Custom quote based on your brief.</div>
-          <ul class="price-list"><li>3+ specialists on-site</li><li>Full-day or multi-slot</li><li>Bespoke station design</li><li>Unlimited keychains</li><li>On-site coordinator</li></ul>
+        <div class="form-section-label">Your Event</div>
+        <div class="form-row">
+          <div class="fg"><label>Event Date *</label><input type="date" required></div>
+          <div class="fg"><label>Number of Guests *</label><select required><option value="">Select range</option><option>Under 50</option><option>50 – 150</option><option>150 – 300</option><option>300 – 500</option><option>500+</option></select></div>
         </div>
-      </div>
+        <div class="fg"><label>Event Location / Venue *</label><input type="text" placeholder="Venue name and city" required></div>
+        <div class="fg"><label>Type of Event *</label><select required><option value="">Select event type</option><option>Corporate Event</option><option>Product Launch</option><option>Private Party / Birthday</option><option>Wedding</option><option>Trade Show / Expo</option><option>Team Event</option><option>Brand Activation</option><option>Other</option></select></div>
+        <div class="form-section-label">Your Activation</div>
+        <div class="fg">
+          <label>Which activations are you interested in?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" value="clicker" checked><span>Clicker Bar</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="hotpress"><span>Hot Press Canvas</span></label>
+          </div>
+        </div>
+        <div class="fg"><label>Budget Range (optional)</label><select><option value="">Select range</option><option>Under €1,000</option><option>€1,000 – €2,500</option><option>€2,500 – €5,000</option><option>€5,000 – €10,000</option><option>€10,000+</option></select></div>
+        <div class="fg"><label>Tell us more about your event</label><textarea placeholder="Event theme, goals, special requirements, branding preferences, anything that helps us tailor the perfect activation for you."></textarea></div>
+        <button type="submit" class="btn-submit">Submit Request</button>
+        <p class="form-note">No spam. We respond within 48 hours with your custom quote.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -243,11 +339,10 @@
 <footer>
   <div class="foot-top"><div class="foot-nl"><div class="foot-nl-heading">Stay inspired.</div><p>Event inspiration once a month, no spam.</p><form class="nl-form" id="nlForm"><input type="email" placeholder="Your email address" required><button type="submit">Send</button></form></div>
   <div class="foot-acts"><div class="foot-acts-label">Activations</div><ul class="foot-act-list">
-    <li><a href="live-monogramming.html"><div class="foot-act-left"><img src="images/img-card-mono.png" alt="" class="foot-act-thumb">Live Monogramming</div><span class="foot-act-arrow">VIEW</span></a></li>
     <li><a href="clicker-bar.html"><div class="foot-act-left"><img src="images/img-card-clicker.png" alt="" class="foot-act-thumb">Clicker Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
     <li><a href="live-hot-press.html"><div class="foot-act-left"><img src="images/hot-03-tote-bag.png" alt="" class="foot-act-thumb">Live Hot Press Canvas</div><span class="foot-act-arrow">VIEW</span></a></li>
   </ul></div></div>
-  <div class="foot-mid"><div class="foot-mid-info"><p>Amsterdam, Netherlands</p><p>hello@event.studio</p></div><div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="live-monogramming.html">Live Monogramming</a><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div><div><div class="foot-col-label">Company</div><div class="foot-col-links"><a href="catalog.html">Catalog</a><a href="pricing.html">How It Works</a><a href="about.html">About</a><a href="index.html#faq">FAQ</a></div></div></div>
+  <div class="foot-mid"><div class="foot-mid-info"><p>Amsterdam, Netherlands</p><p>hello@event.studio</p></div><div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a></div></div><div><div class="foot-col-label">Company</div><div class="foot-col-links"><a href="catalog.html">Catalog</a><a href="pricing.html">How It Works</a><a href="about.html">About</a><a href="index.html#faq">FAQ</a></div></div></div>
   <div class="foot-bottom"><p>© 2026 Event Studio. All rights reserved.</p><div class="foot-socials"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">TikTok</a></div></div>
 </footer>
 <script>
@@ -257,7 +352,6 @@ if(mobClose)mobClose.addEventListener('click',()=>{ham.classList.remove('open');
 overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');}));
 document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(r));
 document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Sent';b.disabled=true;});
-document.querySelectorAll('.ptgl-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.ptgl-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.pricing-panel').forEach(p=>p.classList.remove('shown'));document.getElementById('panel-'+btn.dataset.panel).classList.add('shown');});});
 </script>
 </body>
 </html>

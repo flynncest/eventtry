@@ -83,67 +83,53 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
     .act-card {
-      background: rgba(255,255,255,0.58);
-      border-radius: 22px;
-      padding: 24px 22px 26px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease;
+      text-align: left;
       cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
     }
-    .act-card:hover {
-      transform: scaleY(1.07) translateY(-10px);
-      transform-origin: bottom center;
-      box-shadow: 0 28px 80px rgba(0,0,0,0.09);
-    }
-    .act-badge {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: #4c2a19;
-      border: 1px solid transparent;
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-      margin-bottom: 14px;
-    }
+    .act-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .act-card-img-wrap { width: 100%; height: 300px; background: #F4F4F4; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .act-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .act-card-body { padding: 28px 30px 32px; display: flex; flex-direction: column; flex: 1; width: 100%; }
+    .act-cat-label { font-size: 10.5px; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
     .act-card h3 {
-      font-size: 18px;
+      font-size: clamp(22px, 2.3vw, 32px);
       font-weight: 600;
       color: var(--char);
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      margin-bottom: 12px;
     }
     .act-card-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: rgba(30,30,30,0.6);
-      line-height: 1.55;
-      margin-bottom: 18px;
+      line-height: 1.65;
       flex: 1;
-    }
-    .act-card-img {
-      width: 100%;
-      height: 190px;
-      object-fit: contain;
-      margin-bottom: 22px;
-      border-radius: 12px;
+      margin-bottom: 28px;
     }
     .act-card-foot {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
       width: 100%;
+      gap: 12px;
+      flex-wrap: wrap;
     }
+    .act-price-from { font-size: 13px; color: rgba(30,30,30,0.50); line-height: 1.4; }
+    .act-price-from strong { font-size: 15px; font-weight: 700; color: var(--char); margin: 0 2px; }
     .btn-act {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       background: var(--char);
       color: #fff;
       font-size: 13px;
@@ -151,13 +137,9 @@
       padding: 9px 20px;
       border-radius: var(--r-pill);
       transition: background .2s;
+      white-space: nowrap;
     }
     .btn-act:hover { background: #333; }
-    .act-price {
-      font-size: 12px;
-      color: rgba(30,30,30,0.45);
-      font-weight: 500;
-    }
 
     /* ── WHY US ─────────────────────────────────────────────── */
     .sec-why { padding: 88px var(--pad); background: #fff; }
@@ -169,13 +151,13 @@
     }
     .why-item {
       background: var(--soft);
-      border-radius: 20px;
+      border-radius: 8px;
       padding: 30px 26px;
     }
     .why-icon {
       width: 46px; height: 46px;
       background: var(--lime-soft);
-      border-radius: 13px;
+      border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 18px;
     }
@@ -184,45 +166,82 @@
     .why-item p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
     /* ── TYPES ──────────────────────────────────────────────── */
-    .sec-types { padding: 0 var(--pad) 88px; background: #fff; }
-    .types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .type-card {
-      background: var(--soft);
-      border-radius: 24px;
-      padding: 44px 44px 52px;
-      position: relative;
-      overflow: hidden;
+    .sec-types {
+      min-height: 85vh;
+      padding: 48px var(--pad);
+      background: url('images/hero-bg.png') center/cover;
+      display: flex;
+      align-items: center;
     }
+    .type-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(235,222,203,0.60);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      max-width: var(--mw);
+      width: 100%;
+      margin: 0 auto;
+    }
+    .type-card-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 72px 80px;
+      min-height: 60vh;
+    }
+    .type-content { flex: 1; }
     .type-label {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 14px;
+      color: rgba(30,30,30,0.55);
+      margin-bottom: 20px;
     }
     .type-card h3 {
-      font-size: clamp(26px, 2.8vw, 42px);
+      font-size: clamp(28px, 3vw, 48px);
       font-weight: 600;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
       color: var(--char);
-      line-height: 1.1;
-      margin-bottom: 14px;
+      line-height: 1.08;
+      margin-bottom: 24px;
     }
+    .type-stats-box {
+      display: inline-flex;
+      gap: 0;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .type-stat {
+      padding: 16px 24px;
+      border-right: 1px solid rgba(255,255,255,0.4);
+    }
+    .type-stat:last-child { border-right: none; }
+    .type-stat-val { font-size: 20px; font-weight: 600; color: var(--char); letter-spacing: -0.5px; }
+    .type-stat-lbl { font-size: 11px; color: rgba(30,30,30,0.6); margin-top: 2px; }
     .type-card p {
       font-size: 15px;
-      color: var(--muted);
+      color: rgba(30,30,30,0.65);
       line-height: 1.65;
-      max-width: 380px;
-      margin-bottom: 30px;
+      max-width: 420px;
+      margin-bottom: 32px;
     }
-    .type-glow {
-      position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: rgba(76,42,25,0.08);
-      border-radius: 50%;
-      pointer-events: none;
+    .type-img-slot {
+      width: 360px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .type-img-slot img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 40px rgba(0,0,0,0.20));
     }
 
     /* ── BOOK NOW ────────────────────────────────────────────── */
@@ -261,7 +280,7 @@
     .fg input, .fg select, .fg textarea {
       padding: 13px 15px;
       border: 1.5px solid rgba(30,30,30,0.11);
-      border-radius: 13px;
+      border-radius: 8px;
       font-size: 14.5px;
       font-family: 'Inter', sans-serif;
       color: var(--char);
@@ -334,7 +353,10 @@
       .hero { min-height: 85vh; padding: 110px 5vw 70px; border-radius: 0 0 28px 28px; }
       .cards-grid { grid-template-columns: 1fr; gap: 12px; }
       .why-grid { grid-template-columns: 1fr; gap: 14px; }
-      .types-grid { grid-template-columns: 1fr; }
+      .sec-types { min-height: unset; padding: 32px 5vw; }
+      .type-card-inner { flex-direction: column; gap: 32px; padding: 36px 28px 40px; min-height: unset; }
+      .type-img-slot { width: 200px; }
+      .type-stats-box { flex-wrap: wrap; }
       .book-inner { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
       .sec-act, .sec-why, .sec-types, .sec-book, .sec-faq { padding: 64px 5vw; }
@@ -356,8 +378,6 @@
         </button>
         <div class="nav-dropdown">
           <div class="nav-dropdown-menu">
-            <a href="live-monogramming.html">Live Monogramming</a>
-            
             <a href="clicker-bar.html">Clicker Bar</a>
             <a href="live-hot-press.html">Live Hot Press Canvas</a>
           </div>
@@ -375,20 +395,11 @@
 <div class="mobile-overlay" id="mobileOverlay">
   <div class="mob-top">
     <a href="index.html" class="mob-logo">Event</a>
-    <div class="mob-topnav">
-      <a href="catalog.html">Catalog</a>
-      <a href="pricing.html">How It Works</a>
-      <a href="#faq">FAQ</a>
-    </div>
     <button class="mob-close" id="mobClose">
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg>
     </button>
   </div>
   <div class="mob-panel">
-    <a href="live-monogramming.html" class="mob-item">
-      <div class="mob-item-img"><img src="images/img-card-mono.png" alt="Live Monogramming"></div>
-      <div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Monogramming</span></div>
-    </a>
     <a href="clicker-bar.html" class="mob-item">
       <div class="mob-item-img"><img src="images/img-card-clicker.png" alt="Clicker Bar"></div>
       <div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Clicker Bar</span></div>
@@ -397,7 +408,11 @@
       <div class="mob-item-img"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas"></div>
       <div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Hot Press Canvas</span></div>
     </a>
-    <a href="catalog.html" class="mob-all">Browse All Catalog <span>→</span></a>
+  </div>
+  <div class="mob-nav-links">
+    <a href="catalog.html" class="mob-nav-text">Catalog</a>
+    <a href="pricing.html" class="mob-nav-text">How It Works</a>
+    <a href="#faq" class="mob-nav-text">FAQ</a>
   </div>
   <a href="book.html" class="mob-quote">Get a Quote</a>
 </div>
@@ -405,9 +420,8 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-pill">Rental Activation Boxes · Nederland</div>
       <h1>Brand-new personalisation activations, boxed up and ready for your event.</h1>
-      <p class="hero-sub">Order a box, set it up on a table, and your guests run the whole thing themselves. A branded souvenir they built — that carries your logo into their daily life.</p>
+      <p class="hero-sub">Order a box, set it up on a table, and your guests run the whole thing themselves. A branded souvenir they built. Your logo in their daily life.</p>
       <div class="hero-ctas">
         <a href="book.html" class="btn-primary">Get a Quote</a>
         <a href="#activations" class="btn-outline">View Activations</a>
@@ -419,41 +433,38 @@
 <section class="sec-act" id="activations">
   <div class="sec-inner">
     <div class="sec-hdr reveal">
-      <div class="sec-badge-lime">Our Activations</div>
-      <h2 class="sec-h2">Two activation boxes. Every guest walks away with something they made.</h2>
-      <p class="sec-sub">No staff needed at the station. No complicated setup. One table, the box, and guests do the rest.</p>
+      <h2 class="sec-h2">Two activations. One table. No staff.</h2>
+      <p class="sec-sub">Order a box, set it up, and guests run it themselves. Ship it back when you're done.</p>
     </div>
     <div class="cards-grid">
-      <div class="act-card reveal">
-        <span class="act-badge">Bestseller</span>
-        <h3>Live Monogramming</h3>
-        <p class="act-card-desc">Our artisans hot-stamp your guests' initials onto premium leather in under two minutes. A wallet or notebook with their name in gold foil — they keep it for years.</p>
-        <img src="images/img-card-mono.png" alt="Live monogramming leather goods" class="act-card-img">
-        <div class="act-card-foot">
-          <a href="live-monogramming.html" class="btn-act">Discover</a>
-          <span class="act-price">From €12 per piece</span>
+      <a href="clicker-bar.html" class="act-card reveal">
+        <div class="act-card-img-wrap">
+          <img src="images/img-card-clicker.png" alt="Clicker Bar keyboard keychain">
         </div>
-      </div>
-      <div class="act-card reveal">
-        <span class="act-badge">Interactive</span>
-        <h3>Clicker Bar</h3>
-        <p class="act-card-desc">Guests spell their name in mechanical keyboard keys and clip it to their bag. Your logo is on every key — it stays on their keyring long after the event.</p>
-        <img src="images/img-card-clicker.png" alt="Clicker bar keyboard keychain" class="act-card-img">
-        <div class="act-card-foot">
-          <a href="clicker-bar.html" class="btn-act">Discover</a>
-          <span class="act-price">From €8 per piece</span>
+        <div class="act-card-body">
+          <div class="act-cat-label">Interactive Activation</div>
+          <h3>Clicker Bar</h3>
+          <p class="act-card-desc">Guests spell their name in mechanical keyboard keys and clip it to their bag. Your logo on every key. Lives on their keyring long after the event.</p>
+          <div class="act-card-foot">
+            <div class="act-price-from">From <strong>€395</strong> incl. VAT</div>
+            <span class="btn-act">Discover</span>
+          </div>
         </div>
-      </div>
-      <div class="act-card reveal">
-        <span class="act-badge">New</span>
-        <h3>Live Hot Press Canvas</h3>
-        <p class="act-card-desc">Guests choose a sticker design and iron it onto a tote bag in seconds. Your designs, their bag. A branded item they actually use.</p>
-        <img src="images/hot-03-tote-bag.png" alt="Hot press canvas tote bag" class="act-card-img" style="padding:14px">
-        <div class="act-card-foot">
-          <a href="live-hot-press.html" class="btn-act">Discover</a>
-          <span class="act-price">From €8 per piece</span>
+      </a>
+      <a href="live-hot-press.html" class="act-card reveal">
+        <div class="act-card-img-wrap">
+          <img src="images/item-tote-wide.png" alt="Hot Press Canvas tote bag">
         </div>
-      </div>
+        <div class="act-card-body">
+          <div class="act-cat-label">Interactive Activation</div>
+          <h3>Hot Press Canvas</h3>
+          <p class="act-card-desc">Guests choose a sticker design and press it onto their canvas item in 45 seconds. Your brand, their keepsake. Done while they watch.</p>
+          <div class="act-card-foot">
+            <div class="act-price-from">From <strong>€650</strong> incl. VAT</div>
+            <span class="btn-act">Discover</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -461,9 +472,8 @@
 <section class="sec-why">
   <div class="sec-inner">
     <div class="sec-hdr reveal">
-      <div class="sec-badge">Why Event</div>
-      <h2 class="sec-h2">Why event organizers order again</h2>
-      <p class="sec-sub">No agency, no crew, no venue coordination. Just a box that arrives with everything inside.</p>
+      <h2 class="sec-h2">Built for events that run themselves.</h2>
+      <p class="sec-sub">No agency. No crew. No venue coordination. A box arrives with everything inside. Your guests do the rest.</p>
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
@@ -501,28 +511,28 @@
           </svg>
         </div>
         <h4>From 30 to 300 guests</h4>
-        <p>Order a Starter Box for a small dinner or a Large Box for a conference. Ships within 3 days. Leftovers go back in the box after — return label is included.</p>
+        <p>Order a Starter Box for a small dinner or a Large Box for a conference. Ships within 3 days. Leftovers go back in the box after. Return label is included.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="sec-types">
-  <div class="sec-inner">
-    <div class="types-grid">
-      <div class="type-card reveal">
+  <div class="type-card reveal">
+    <div class="type-card-inner">
+      <div class="type-content">
         <div class="type-label">The Activation Box</div>
-        <h3>Order it online. Set up in 20 minutes.</h3>
-        <p>We design your keys or stickers, pack everything and ship via PostNL. Set up takes 20 minutes. After your event, put it all back and drop it off at any PostNL point — the return label is already in the box.</p>
-        <a href="clicker-bar.html" class="btn-dark">See How It Works</a>
-        <div class="type-glow"></div>
+        <h3>Order it online.<br>Set up in 20 minutes.</h3>
+        <div class="type-stats-box">
+          <div class="type-stat"><div class="type-stat-val">From €195</div><div class="type-stat-lbl">Starter box</div></div>
+          <div class="type-stat"><div class="type-stat-val">20 min</div><div class="type-stat-lbl">Setup time</div></div>
+          <div class="type-stat"><div class="type-stat-val">No staff</div><div class="type-stat-lbl">Self-serve</div></div>
+        </div>
+        <p>We design your keys or stickers, pack everything and ship via PostNL. Your guests run the station themselves. Return the box after with the label already inside.</p>
+        <a href="book.html" class="btn-dark">Get a Quote</a>
       </div>
-      <div class="type-card reveal">
-        <div class="type-label">Full Service</div>
-        <h3>Need someone to run it? We've got you.</h3>
-        <p>We bring the equipment, decorate the station and host your guests through every piece. Zero work on your end. Available for all three activations including Live Monogramming.</p>
-        <a href="live-monogramming.html" class="btn-dark">See How It Works</a>
-        <div class="type-glow"></div>
+      <div class="type-img-slot">
+        <img src="images/img-card-clicker.png" alt="The Activation Box">
       </div>
     </div>
   </div>
@@ -531,7 +541,6 @@
 <section class="sec-book" id="book">
   <div class="book-inner">
     <div class="book-info reveal">
-      <div class="sec-badge">Book an Activation</div>
       <h2 class="sec-h2">Tell us your date and guest count. We'll send a quote within 48 hours.</h2>
       <p>No guesswork on our end. Tell us your date, guest count and which box you want. We'll confirm availability and send exact pricing.</p>
       <div class="book-features">
@@ -579,7 +588,6 @@
       <div class="fg">
         <label>Preferred Activations</label>
         <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" name="act" value="monogramming"><span>Live Monogramming</span></label>
           <label class="checkbox-item"><input type="checkbox" name="act" value="clicker"><span>Clicker Bar</span></label>
           <label class="checkbox-item"><input type="checkbox" name="act" value="hotpress"><span>Hot Press Canvas</span></label>
         </div>
@@ -607,7 +615,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-text">Can I run multiple activations at one event?</span><div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div></div>
-        <div class="faq-a">Yes. Order both boxes and run two stations side by side — guests can do both. We offer a discount on combined orders. Ask about it in the form.</div>
+        <div class="faq-a">Yes. Order both boxes and run two stations side by side. Guests can do both. We offer a discount on combined orders. Ask about it in the form.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-text">Do you travel to our venue?</span><div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div></div>
@@ -638,7 +646,6 @@
     <div class="foot-acts">
       <div class="foot-acts-label">Activations</div>
       <ul class="foot-act-list">
-        <li><a href="live-monogramming.html"><div class="foot-act-left"><img src="images/img-card-mono.png" alt="Live Monogramming" class="foot-act-thumb">Live Monogramming</div><span class="foot-act-arrow">VIEW</span></a></li>
         <li><a href="clicker-bar.html"><div class="foot-act-left"><img src="images/img-card-clicker.png" alt="Clicker Bar" class="foot-act-thumb">Clicker Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
         <li><a href="live-hot-press.html"><div class="foot-act-left"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas" class="foot-act-thumb">Live Hot Press Canvas</div><span class="foot-act-arrow">VIEW</span></a></li>
       </ul>
@@ -649,8 +656,6 @@
     <div>
       <div class="foot-col-label">Activations</div>
       <div class="foot-col-links">
-        <a href="live-monogramming.html">Live Monogramming</a>
-        
         <a href="clicker-bar.html">Clicker Bar</a>
         <a href="live-hot-press.html">Live Hot Press Canvas</a>
       </div>
