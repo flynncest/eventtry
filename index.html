@@ -102,7 +102,7 @@
     .act-card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; width: 100%; }
     .act-cat-label { font-size: 10.5px; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
     .act-card h3 {
-      font-size: clamp(22px, 2.3vw, 32px);
+      font-size: clamp(17px, 1.6vw, 22px);
       font-weight: 600;
       color: var(--char);
       letter-spacing: -1px;
@@ -153,15 +153,11 @@
       background: var(--soft);
       border-radius: 8px;
       padding: 30px 26px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
-    .why-icon {
-      width: 46px; height: 46px;
-      background: var(--lime-soft);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-    }
-    .why-icon svg { width: 22px; height: 22px; }
     .why-item h4 { font-size: 16px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
     .why-item p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
@@ -472,46 +468,25 @@
 <section class="sec-why">
   <div class="sec-inner">
     <div class="sec-hdr reveal">
-      <h2 class="sec-h2">Built for events that run themselves.</h2>
-      <p class="sec-sub">No agency. No crew. No venue coordination. A box arrives with everything inside. Your guests do the rest.</p>
+      <h2 class="sec-h2">Designed for event managers with a full programme to run.</h2>
+      <p class="sec-sub">Ship the box to your venue, brief your team in 10 minutes, and let guests do the rest. Nothing to staff. Nothing to chase on the day.</p>
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#4c2a19" stroke-width="2" stroke-linecap="round">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
         <h4>Everything is in the box</h4>
         <p>Keys, irons, stickers, table cover, display, setup guide. Packed and shipped to your door. Open it at your venue and you're ready.</p>
       </div>
       <div class="why-item reveal">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#4c2a19" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
         <h4>Set up in under 20 minutes</h4>
         <p>Lay out the table cover, follow the illustrated guide, and your station is ready before the first guest arrives.</p>
       </div>
       <div class="why-item reveal">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#4c2a19" stroke-width="2" stroke-linecap="round">
-            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-          </svg>
-        </div>
-        <h4>Fully Customizable</h4>
+        <h4>Fully customisable</h4>
         <p>Your logo on every key or sticker design. We handle all design work before we pack the box. Your guests make something that carries your brand home.</p>
       </div>
       <div class="why-item reveal">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#4c2a19" stroke-width="2" stroke-linecap="round">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-          </svg>
-        </div>
         <h4>From 30 to 300 guests</h4>
-        <p>Order a Starter Box for a small dinner or a Large Box for a conference. Ships within 3 days. Leftovers go back in the box after. Return label is included.</p>
+        <p>Order a Starter Box for a small dinner or a Large Box for a conference. Ships within 3 days. Return label is included.</p>
       </div>
     </div>
   </div>
