@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fragrance Bar | Custom Scent Sachet Activation for Events</title>
+  <meta name="description" content="Guests blend their own fragrance and seal it in a custom sachet with your logo. Rental activation for corporate events, product launches and private celebrations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .act-hero { min-height: 65vh; background: #F4F4F4; display: flex; align-items: center; padding: 140px var(--pad) 72px; border-radius: 0 0 40px 40px; }
+    .act-hero-inner { max-width: var(--mw); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .act-hero-text .sec-badge-lime { color: rgba(30,30,30,0.55); margin-bottom: 14px; }
+    .act-hero-text h1 { font-size: clamp(30px,4.4vw,64px); font-weight: 400; letter-spacing: -2.5px; color: var(--char); line-height: 1.0; margin-bottom: 16px; }
+    .act-hero-text p { font-size: 16px; color: rgba(30,30,30,0.65); max-width: 480px; line-height: 1.65; margin-bottom: 28px; }
+    .act-hero-img { display: flex; justify-content: center; align-items: center; height: 380px; background: #ede0d0; border-radius: 8px; }
+    .act-hero-img img { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 8px; }
+    .stat-bar { display: flex; background: rgba(255,255,255,0.72); border-radius: 8px; margin-top: 12px; overflow: hidden; max-width: 460px; }
+    .stat-bar-item { flex: 1; padding: 16px 20px; border-right: 1px solid rgba(0,0,0,0.07); }
+    .stat-bar-item:last-child { border-right: none; }
+    .stat-bar-num { font-size: 22px; font-weight: 600; color: var(--char); }
+    .stat-bar-lbl { font-size: 11px; color: rgba(30,30,30,0.55); font-weight: 500; }
+
+    .sec-how { padding: 88px var(--pad); background: #fff; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+    .step { background: #F4F4F4; border-radius: 8px; overflow: hidden; }
+    .step-img { height: 55vh; width: 100%; overflow: hidden; background: #ede0d0; display: flex; align-items: center; justify-content: center; }
+    .step-img img { width: 100%; height: 100%; object-fit: cover; }
+    .step-body { padding: 24px 24px 28px; }
+    .step-body h4 { font-size: 18px; font-weight: 600; color: var(--char); margin-bottom: 8px; letter-spacing: -0.3px; }
+    .step-body p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    .sec-scents { padding: 88px var(--pad); background: #fff; }
+    .scents-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+    .scent-card { background: #F4F4F4; border-radius: 8px; padding: 22px 20px; }
+    .scent-name { font-size: 15px; font-weight: 600; color: var(--char); margin-bottom: 5px; }
+    .scent-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+    .design-callout { margin-top: 48px; background: var(--lime); border-radius: 8px; padding: 48px 52px; display: grid; grid-template-columns: 1fr 340px; gap: 52px; align-items: start; }
+    .design-callout-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.48); margin-bottom: 14px; }
+    .design-callout h3 { font-size: 24px; font-weight: 600; color: #fff; letter-spacing: -0.5px; margin-bottom: 12px; line-height: 1.2; }
+    .design-callout > div > p { font-size: 14.5px; color: rgba(255,255,255,0.70); line-height: 1.65; margin-bottom: 28px; }
+    .design-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .design-step { background: rgba(255,255,255,0.09); border-radius: 8px; padding: 18px 20px; }
+    .design-step-n { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.22); line-height: 1; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .design-step-title { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 5px; }
+    .design-step-text { font-size: 12px; color: rgba(255,255,255,0.60); line-height: 1.55; }
+    .design-example-card { background: rgba(255,255,255,0.10); border-radius: 8px; padding: 28px 30px; }
+    .design-example-tag { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .design-example-card h4 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 14px; letter-spacing: -0.3px; line-height: 1.3; }
+    .design-example-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .design-example-list li { font-size: 13px; color: rgba(255,255,255,0.68); display: flex; align-items: flex-start; gap: 9px; line-height: 1.45; }
+    .design-example-list li::before { content: ''; display: block; width: 5px; height: 5px; background: rgba(255,255,255,0.35); border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .design-meta { margin-top: 18px; font-size: 11.5px; color: rgba(255,255,255,0.40); padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.10); line-height: 1.5; }
+
+    .sec-pricing { padding: 88px var(--pad); background: #fff; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .price-card { border: 1.5px solid rgba(30,30,30,0.1); border-radius: 8px; padding: 32px 28px; background: #fff; }
+    .price-card.featured { background: var(--lime); border-color: var(--lime); }
+    .price-tag { font-size: 36px; font-weight: 600; color: var(--char); letter-spacing: -1px; margin-bottom: 4px; }
+    .price-card.featured .price-tag { color: #fff; }
+    .price-unit { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .price-card.featured .price-unit { color: rgba(255,255,255,0.70); }
+    .price-name { font-size: 18px; font-weight: 600; color: var(--char); margin-bottom: 8px; }
+    .price-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .price-card.featured .price-desc { color: rgba(255,255,255,0.75); }
+    .price-card.featured .price-name { color: #fff; }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .price-list li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .price-card.featured .price-list li { color: rgba(255,255,255,0.85); }
+    .price-list li::before { content:''; display:block; width:16px; height:16px; background:var(--lime-soft); border-radius:50%; flex-shrink:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8l3 3 5-5' stroke='%234c2a19' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:center; }
+    .price-card.featured .price-list li::before { background-color:rgba(255,255,255,0.25); }
+    .pricing-contact { margin-top: 24px; text-align: center; font-size: 15px; color: rgba(30,30,30,0.55); }
+    .pricing-contact a { color: var(--lime); font-weight: 600; }
+
+    .sec-box { padding: 88px var(--pad); background: #fff; }
+    .sec-booking { padding: 88px var(--pad); background: #fff; }
+
+    @media (max-width: 900px) { .act-hero-inner { grid-template-columns: 1fr; } .act-hero-img { display: none; } .steps-grid { grid-template-columns: 1fr; } .scents-grid { grid-template-columns: repeat(2,1fr); } .pricing-grid { grid-template-columns: 1fr; } .design-callout { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .act-hero { padding: 120px 5vw 60px; } .sec-how,.sec-scents,.sec-pricing,.sec-box,.sec-booking { padding: 60px 5vw; } .design-callout { padding: 32px 24px; } }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Event</a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <button class="nav-drop-btn">Activations<svg class="chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1.5l5 5 5-5"/></svg></button>
+        <div class="nav-dropdown"><div class="nav-dropdown-menu">
+          <a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a><a href="fragrance-bar.html">Fragrance Bar</a>
+        </div></div>
+      </div>
+      <a href="pricing.html" class="nav-link">How It Works</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span></button>
+  </div>
+  <a href="book.html" class="btn-quote">Get a Quote</a>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay">
+  <div class="mob-top">
+    <a href="index.html" class="mob-logo">Event</a>
+    <button class="mob-close" id="mobClose"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+  </div>
+  <div class="mob-panel">
+    <a href="clicker-bar.html" class="mob-item"><div class="mob-item-img"><img src="images/img-card-clicker.png" alt="Clicker Bar"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Clicker Bar</span></div></a>
+    <a href="live-hot-press.html" class="mob-item"><div class="mob-item-img"><img src="images/hot-03-tote-bag.png" alt="Live Hot Press Canvas"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Live Hot Press Canvas</span></div></a>
+    <a href="fragrance-bar.html" class="mob-item"><div class="mob-item-img" style="background:#ede0d0;"></div><div class="mob-item-info"><span class="mob-item-cat">Activation</span><span class="mob-item-name">Fragrance Bar</span></div></a>
+  </div>
+  <div class="mob-nav-links">
+    <a href="pricing.html" class="mob-nav-text">How It Works</a>
+    <a href="index.html#faq" class="mob-nav-text">FAQ</a>
+  </div>
+  <a href="book.html" class="mob-quote">Get a Quote</a>
+</div>
+
+<section class="act-hero">
+  <div class="act-hero-inner">
+    <div class="act-hero-text">
+      <div class="sec-badge-lime">Live Activation</div>
+      <h1>They blend it.<br>They take it home.</h1>
+      <p>Guests choose from 8 scents, fill their own sachet and seal it. Your logo on every one. A scented gift they made themselves, at your event.</p>
+      <div class="stat-bar">
+        <div class="stat-bar-item"><div class="stat-bar-num">2 min</div><div class="stat-bar-lbl">Per guest</div></div>
+        <div class="stat-bar-item"><div class="stat-bar-num">8</div><div class="stat-bar-lbl">Scents included</div></div>
+        <div class="stat-bar-item"><div class="stat-bar-num">Your logo</div><div class="stat-bar-lbl">On every sachet</div></div>
+      </div>
+    </div>
+    <div class="act-hero-img">
+      <img src="images/frag-hero.jpg" alt="Fragrance Bar activation">
+    </div>
+  </div>
+</section>
+
+<section class="sec-how">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal">
+      <div class="sec-badge">How It Works</div>
+      <h2 class="sec-h2">Three steps. Two minutes. A scent they made.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-img"><img src="images/frag-step-1.jpg" alt="Browse the scents"></div>
+        <div class="step-body">
+          <h4>Browse the scents</h4>
+          <p>8 fragrances on display. Lavender, vanilla, rose, bergamot and more. Guests smell each one and pick what speaks to them.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-img"><img src="images/frag-step-2.jpg" alt="Blend your mix"></div>
+        <div class="step-body">
+          <h4>Blend your mix</h4>
+          <p>Choose 1 to 3 scents and combine them. The pairing guide is there if they want it. Fill the sachet to the line.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-img"><img src="images/frag-step-3.jpg" alt="Seal and take home"></div>
+        <div class="step-body">
+          <h4>Seal and take home</h4>
+          <p>Seal the sachet and walk away. Your event logo on the front. Their own scent blend inside.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-scents">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal">
+      <div class="sec-badge">Scents Included</div>
+      <h2 class="sec-h2">8 scents. Endless combinations.</h2>
+      <p class="sec-sub">Every box ships with 8 fragrance options. Guests smell each one and choose their own blend. No experience needed.</p>
+    </div>
+    <div class="scents-grid">
+      <div class="scent-card reveal"><div class="scent-name">Lavender</div><div class="scent-desc">Calming and floral. Pairs well with vanilla or linen.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Vanilla</div><div class="scent-desc">Warm and sweet. A crowd-pleaser that softens sharper scents.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Rose</div><div class="scent-desc">Classic floral. Light and elegant on its own or blended.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Bergamot</div><div class="scent-desc">Fresh and citrus-forward. Uplifting and light.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Cedarwood</div><div class="scent-desc">Warm and woody. Grounding and long-lasting.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Jasmine</div><div class="scent-desc">Rich floral. Bold. Pairs well with cedarwood or rose.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Sandalwood</div><div class="scent-desc">Creamy and smooth. Adds depth to any blend.</div></div>
+      <div class="scent-card reveal"><div class="scent-name">Fresh Linen</div><div class="scent-desc">Clean and airy. Light enough to let other scents lead.</div></div>
+    </div>
+
+    <div class="design-callout reveal">
+      <div>
+        <div class="design-callout-label">Your branding included</div>
+        <h3>Your logo on every sachet. We design it before we ship.</h3>
+        <p>Every sachet comes with your event or company logo printed on the front. Share your assets and we handle the design.</p>
+        <div class="design-steps">
+          <div class="design-step">
+            <div class="design-step-n">01</div>
+            <div class="design-step-title">Share your brief</div>
+            <div class="design-step-text">Logo file, event name or brand guidelines. That's all we need.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">02</div>
+            <div class="design-step-title">We design the label</div>
+            <div class="design-step-text">Sachet label designed and sent as a preview within 3 days.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">03</div>
+            <div class="design-step-title">You approve</div>
+            <div class="design-step-text">Confirm or request small changes. We print once you're happy.</div>
+          </div>
+          <div class="design-step">
+            <div class="design-step-n">04</div>
+            <div class="design-step-title">Ships in the box</div>
+            <div class="design-step-text">Printed sachets packed and ready. Guests fill them on the day.</div>
+          </div>
+        </div>
+      </div>
+      <div class="design-example-card">
+        <div class="design-example-tag">Example</div>
+        <h4>Brand launch dinner</h4>
+        <ul class="design-example-list">
+          <li>Logo and product name printed on the sachet front</li>
+          <li>Guests blended their scent at the table station</li>
+          <li>Sachets doubled as a branded take-home gift</li>
+        </ul>
+        <div class="design-meta">Logo design included in all packages · brief due 2 weeks before shipping</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pricing">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal">
+      <h2 class="sec-h2">Simple pricing, sized for your event</h2>
+      <p class="sec-sub">All prices include VAT. Box ships to your venue. Everything you need is inside.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-tag">€395</div>
+        <div class="price-unit">incl. VAT</div>
+        <div class="price-name">Starter</div>
+        <div class="price-desc">Up to 75 guests. Private dinners, previews and smaller brand events.</div>
+        <ul class="price-list">
+          <li>75 custom logo sachets</li>
+          <li>8 fragrance bottles</li>
+          <li>Display stand</li>
+          <li>Setup guide + return label</li>
+        </ul>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-tag">€595</div>
+        <div class="price-unit">incl. VAT</div>
+        <div class="price-name">Studio</div>
+        <div class="price-desc">Up to 150 guests. The most popular size for product launches and corporate events.</div>
+        <ul class="price-list">
+          <li>150 custom logo sachets</li>
+          <li>8 fragrance bottles</li>
+          <li>Display stand</li>
+          <li>Priority shipping</li>
+          <li>Setup guide + return label</li>
+        </ul>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tag">€895</div>
+        <div class="price-unit">incl. VAT</div>
+        <div class="price-name">Event</div>
+        <div class="price-desc">Up to 300 guests. Conferences, galas and large brand activations.</div>
+        <ul class="price-list">
+          <li>300 custom logo sachets</li>
+          <li>8 fragrance bottles</li>
+          <li>2 display stands</li>
+          <li>Priority shipping</li>
+          <li>Setup guide + return label</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-contact">Need more than 300 guests? <a href="book.html">Get in touch</a> for a custom quote.</p>
+  </div>
+</section>
+
+<section class="sec-box">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal">
+      <div class="sec-badge">What's Included</div>
+      <h2 class="sec-h2">Everything in one box. Nothing to source.</h2>
+    </div>
+    <div class="box-items-grid">
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img" style="background:#ede0d0;"></div>
+        <div class="box-item-card-body">
+          <div class="box-item-card-name">Custom Logo Sachets</div>
+          <div class="box-item-card-desc">Your event or company logo printed on the front. Guests fill them with their chosen scent blend on the day.</div>
+        </div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img" style="background:#ede0d0;"></div>
+        <div class="box-item-card-body">
+          <div class="box-item-card-name">8 Fragrance Bottles</div>
+          <div class="box-item-card-desc">Lavender, vanilla, rose, bergamot, cedarwood, jasmine, sandalwood and fresh linen. Enough for a full event.</div>
+        </div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img" style="background:#ede0d0;"></div>
+        <div class="box-item-card-body">
+          <div class="box-item-card-name">Display Stand</div>
+          <div class="box-item-card-desc">Scent bottles and pairing guide displayed neatly. Assembles in under 5 minutes.</div>
+        </div>
+      </div>
+      <div class="box-item-card reveal">
+        <div class="box-item-card-img" style="background:#ede0d0;"></div>
+        <div class="box-item-card-body">
+          <div class="box-item-card-name">Setup Guide</div>
+          <div class="box-item-card-desc">Step-by-step illustrated setup. Full station ready in under 15 minutes. Return label already inside.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-booking" id="frag-book-form">
+  <div class="sec-inner">
+    <div class="sec-hdr reveal">
+      <div class="sec-badge">Get a Quote</div>
+      <h2 class="sec-h2">Tell us your date. We respond within 48 hours.</h2>
+      <p class="sec-sub">No commitment required. One email with your quote.</p>
+    </div>
+    <form class="book-form reveal" id="bookForm">
+      <div class="form-section-label">Your Details</div>
+      <div class="form-row">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="Jane Smith" required></div>
+        <div class="fg"><label>Company</label><input type="text" placeholder="Acme Corp (optional)"></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="jane@company.com" required></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+31 6 12 345 678"></div>
+      </div>
+      <div class="form-section-label">Your Event</div>
+      <div class="form-row">
+        <div class="fg"><label>Event Date *</label><input type="date" required></div>
+        <div class="fg"><label>Number of Guests *</label>
+          <select required>
+            <option value="">Select range</option>
+            <option>Under 50</option>
+            <option>50 to 150</option>
+            <option>150 to 300</option>
+            <option>300 to 500</option>
+            <option>500+</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Event Location / Venue *</label><input type="text" placeholder="Venue name and city" required></div>
+      <div class="fg"><label>Type of Event *</label>
+        <select required>
+          <option value="">Select event type</option>
+          <option>Corporate Event</option>
+          <option>Product Launch</option>
+          <option>Private Party / Birthday</option>
+          <option>Wedding</option>
+          <option>Trade Show / Expo</option>
+          <option>Team Event</option>
+          <option>Brand Activation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-section-label">Your Activation</div>
+      <div class="fg">
+        <label>Which activations are you interested in?</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" value="clicker"><span>Clicker Bar</span></label>
+          <label class="checkbox-item"><input type="checkbox" value="hotpress"><span>Hot Press Canvas</span></label>
+          <label class="checkbox-item"><input type="checkbox" value="fragrance" checked><span>Fragrance Bar</span></label>
+        </div>
+      </div>
+      <div class="fg"><label>Budget Range (optional)</label>
+        <select>
+          <option value="">Select range</option>
+          <option>Under €1,000</option>
+          <option>€1,000 to €2,500</option>
+          <option>€2,500 to €5,000</option>
+          <option>€5,000 to €10,000</option>
+          <option>€10,000+</option>
+        </select>
+      </div>
+      <div class="fg"><label>Tell us more about your event</label>
+        <textarea placeholder="Event theme, goals, special requirements, branding preferences, anything that helps us tailor the activation for you."></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">Submit Request</button>
+      <p class="form-note">No spam. We respond within 48 hours with your custom quote.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-nl"><div class="foot-nl-heading">Stay inspired.</div><p>Sign up for event activation ideas and inspiration, once a month, no spam.</p><form class="nl-form" id="nlForm"><input type="email" placeholder="Your email address" required><button type="submit">Send</button></form></div>
+    <div class="foot-acts"><div class="foot-acts-label">Activations</div><ul class="foot-act-list">
+      <li><a href="clicker-bar.html"><div class="foot-act-left"><img src="images/img-card-clicker.png" alt="" class="foot-act-thumb">Clicker Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
+      <li><a href="live-hot-press.html"><div class="foot-act-left"><img src="images/hot-03-tote-bag.png" alt="" class="foot-act-thumb">Live Hot Press Canvas</div><span class="foot-act-arrow">VIEW</span></a></li>
+      <li><a href="fragrance-bar.html"><div class="foot-act-left">Fragrance Bar</div><span class="foot-act-arrow">VIEW</span></a></li>
+    </ul></div>
+  </div>
+  <div class="foot-mid">
+    <div class="foot-mid-info"><p>Amsterdam, Netherlands</p><p>hello@event.studio</p></div>
+    <div><div class="foot-col-label">Activations</div><div class="foot-col-links"><a href="clicker-bar.html">Clicker Bar</a><a href="live-hot-press.html">Live Hot Press Canvas</a><a href="fragrance-bar.html">Fragrance Bar</a></div></div>
+    <div><div class="foot-col-label">Company</div><div class="foot-col-links"><a href="pricing.html">How It Works</a><a href="about.html">About</a><a href="index.html#faq">FAQ</a></div></div>
+  </div>
+  <div class="foot-bottom"><p>© 2026 Event Studio. All rights reserved.</p><div class="foot-socials"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">TikTok</a></div></div>
+</footer>
+
+<script>
+const ham=document.getElementById('hamburger'),overlay=document.getElementById('mobileOverlay'),mobClose=document.getElementById('mobClose');
+ham.addEventListener('click',()=>{ham.classList.add('open');overlay.classList.add('open');});
+if(mobClose)mobClose.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');});
+overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');overlay.classList.remove('open');}));
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();const btn=document.getElementById('submitBtn');btn.textContent='Request Sent. We\'ll be in touch within 48h';btn.style.background='var(--char)';btn.style.color='#fff';btn.disabled=true;});
+document.getElementById('nlForm').addEventListener('submit',e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Sent';b.disabled=true;});
+</script>
+</body>
+</html>
