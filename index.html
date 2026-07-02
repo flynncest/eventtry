@@ -315,6 +315,7 @@
 
     /* ── FAQ ─────────────────────────────────────────────────── */
     .sec-faq { padding: 88px var(--pad); background: #fff; }
+    .sec-faq .sec-hdr { text-align: center; }
     .faq-wrap { max-width: 780px; margin: 56px auto 0; }
     .faq-item { border-bottom: 1px solid rgba(30,30,30,0.09); }
     .faq-q {
@@ -365,8 +366,8 @@
 <body>
 
 <nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Unbox Events"></a>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Event</a>
     <div class="nav-links">
       <div class="nav-drop">
         <button class="nav-drop-btn">
@@ -382,16 +383,15 @@
       </div>
       
       <a href="pricing.html" class="nav-link">How It Works</a>
-      <a href="#faq" class="nav-link">FAQ</a>
     </div>
+    <a href="book.html" class="btn-quote">Get a Quote</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span></button>
   </div>
-  <a href="book.html" class="btn-quote">Get a Quote</a>
 </nav>
 
 <div class="mobile-overlay" id="mobileOverlay">
   <div class="mob-top">
-    <a href="index.html" class="mob-logo">Event</a>
+    <a href="index.html" class="mob-logo"><img src="images/logo.png" alt="Unbox Events"></a>
     <button class="mob-close" id="mobClose">
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg>
     </button>
@@ -590,7 +590,7 @@
 
 <section class="sec-faq" id="faq">
   <div class="sec-inner">
-    <div class="sec-hdr reveal" style="text-align:center">
+    <div class="sec-hdr reveal">
       <div class="sec-badge">FAQ</div>
       <h2 class="sec-h2">Everything You Need to Know</h2>
     </div>
